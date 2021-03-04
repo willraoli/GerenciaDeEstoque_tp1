@@ -8,33 +8,47 @@ package GerenciaDeEstoque;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ *
+ * @author Usuario
+ */
 public class NotaFiscal {
-    private int codigo;
-    private String data;
-    private double valorTotal;
-    private ArrayList<Item> relacaoItens = new ArrayList<>();
-    private static int nrCodigo = 0;
-    //ter uma quantidade vendida
-
-    public NotaFiscal(String data, ArrayList relacaoItens){
-        codigo = 1 + nrCodigo;
-        NotaFiscal.nrCodigo++;
-        this.data = data;
-        this.valorTotal = valorTotal;
-        this.relacaoItens = relacaoItens;
-    }
-
-    public NotaFiscal(String data){
-        this.data = data;
-    }
-
+   private final int codigo;
+   private String data;
+   private double valorTotal;
+   private ArrayList<Item> relacaoItens = new ArrayList<>();
+   private static int nrCodigo = 0;
+   //ter uma quantidade vendida
+   
+   public NotaFiscal(String data, double valorTotal, ArrayList relacaoItens){
+       codigo = 1 + nrCodigo;
+       NotaFiscal.nrCodigo++;
+       this.data = data;
+       this.valorTotal = valorTotal;
+       this.relacaoItens = relacaoItens;
+   }
+   
+   public NotaFiscal(String data){
+       codigo = 1 + nrCodigo;
+       NotaFiscal.nrCodigo++;
+       this.data = data;
+   }
+   
+   
     public boolean addItem(Item i){
+        if(i.getP().subQuantidade(i.getQuantidade())){
         relacaoItens.add(i);
         return true;
+        }
+        return false;
     }
-
-    public void removeItem(Item i){
+    
+    public boolean removeItem(Item i){
+        if(i.getP().addQuantidade(i.getQuantidade())){
         relacaoItens.remove(i);
+        return true;
+        }
+        return false;
     }
 
     /**
@@ -84,7 +98,7 @@ public class NotaFiscal {
     public void setRelacaoItens(ArrayList<Item> relacaoItens) {
         this.relacaoItens = relacaoItens;
     }
-
-
-
+   
+   
+ 
 }

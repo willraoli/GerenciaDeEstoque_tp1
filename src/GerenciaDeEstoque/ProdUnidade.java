@@ -11,16 +11,31 @@ public class ProdUnidade extends Produto {
 
     private int quantidade;
     private Produto p;
-
+    
     public ProdUnidade(String nome, String descricao, double valor, int quantidade) {
         super(nome, descricao, valor);
         this.quantidade = quantidade;
     }
 
+    public boolean subQuantidade(double quantidade) {
+        
+        if (this.quantidade >= quantidade) {
+            this.quantidade -= quantidade;
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean addQuantidade(double quantidade) {
+        this.quantidade += quantidade;
+        return true;
+
+    }
+    
     public String toString(){
         return super.toString() + "\nQuantidade: " + quantidade;
     }
-
+    
     public double getQuantidade() {
         return quantidade;
     }
@@ -36,7 +51,7 @@ public class ProdUnidade extends Produto {
         this.quantidade = quantidadeInt;
     }
 
-
-
+    
+   
 
 }

@@ -12,13 +12,17 @@ public class ManipulaProduto implements IProdutos {
 
     private ArrayList<Produto> listaProd = new ArrayList<>();
 
+    /*
+     * ProdQuilo prQuilo = new ProdQuilo(0, "", 0f); prQuilo.
+     */
     @Override
     public boolean addProduto(Produto p) {
-        if (listaProd.size() > 0 && !listaProd.equals(p)) {
+        boolean ok = false;
+        //if (listaProd.size() > 0 && !listaProd.equals(p)) {
             listaProd.add(p);
-            return true;
-        }
-        return false;
+            ok = true;
+       // }
+        return ok;
     }
 
     @Override
@@ -28,7 +32,7 @@ public class ManipulaProduto implements IProdutos {
         if (listaProd.size() > 0) {
             for (Produto prod : listaProd) {
                 if (prod.getCodigo() == codigo) {
-                    removProduto = prod;
+                   removProduto = prod; 
                 }
             }
             listaProd.remove(removProduto);
@@ -39,10 +43,12 @@ public class ManipulaProduto implements IProdutos {
 
     @Override
     public Produto getProduto(int codigo) {
+        Produto prodNovo = null;
         if (listaProd.size() > 0) {
             for (Produto prod : listaProd) {
                 if (prod.getCodigo() == codigo) {
-                    return prod;
+                    prodNovo = prod;
+                    return prod;                    
                 }
             }
         }
@@ -55,7 +61,7 @@ public class ManipulaProduto implements IProdutos {
         if (listaProd.size() > 0) {
             for (Produto prod : listaProd) {
                 if (prod.getCodigo() == codigo) {
-                    prod.setQuantidade(nova);
+                    prod.setQuantidade(nova);  
                     ok = true;
                 }
             }
@@ -79,32 +85,29 @@ public class ManipulaProduto implements IProdutos {
 
     @Override
     public boolean addQuantidade(int codigo, double quantidade) {
-        boolean ok = false;
+        
         if (listaProd.size() > 0) {
             for (Produto prod : listaProd) {
-                if (prod.getCodigo() == codigo) {
-                    prod.setQuantidade(prod.getQuantidade() + quantidade);
-                    ok = true;
+                if (prod.getCodigo() == codigo) {                   
+                    prod.addQuantidade(quantidade);
+                    return true;                   
                 }
             }
         }
-        return ok;
+        return false;
     }
 
     @Override
-    public boolean subQuantidade(int codigo, double quantidade) {
-        boolean ok = false;
+    public boolean subQuantidade(int codigo, double quantidade) {        
         if (listaProd.size() > 0) {
             for (Produto prod : listaProd) {
                 if (prod.getCodigo() == codigo) {
-                    if (prod.getQuantidade() > quantidade) {
-                        prod.setQuantidade(prod.getQuantidade() - quantidade);
-                        ok = true;
-                    }
+                    prod.subQuantidade(quantidade);
+                    return true;
                 }
             }
         }
-        return ok;
+        return false;
     }
 
 }

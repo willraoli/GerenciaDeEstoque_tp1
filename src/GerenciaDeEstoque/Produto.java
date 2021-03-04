@@ -6,12 +6,15 @@
 package GerenciaDeEstoque;
 
 public abstract class Produto {
+
     protected final int codigo;
     protected String nome;
     protected String descricao;
     protected double valor;
     protected static int nCodigo = 0;
 
+    // private double quantidade; --> quantidade int(unidade) e quantidade float(kg)
+    // [usar float como descritor do método]
     public Produto(String nome) {
 
         codigo = 1 + nCodigo;
@@ -21,7 +24,7 @@ public abstract class Produto {
         Produto.nCodigo++;
     }
 
-    public Produto(String nome, String descricao, double valor){
+    public Produto(String nome, String descricao, double valor) {
         this.nome = nome;
         this.descricao = descricao;
         this.valor = valor;
@@ -33,7 +36,13 @@ public abstract class Produto {
 
     public abstract double getQuantidade();
 
-    public String toString(){
+    public abstract boolean subQuantidade(double quantidade);
+    
+    public abstract boolean addQuantidade(double quantidade);
+        
+    
+
+    public String toString() {
         return "Nome: " + nome + "\nDescrição: " + descricao + "\nValor: " + valor + "\nCódigo: " + codigo;
     }
 

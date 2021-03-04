@@ -5,9 +5,15 @@
  */
 package GerenciaDeEstoque;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
-
+/**
+ *
+ * @author Usuario
+ */
 public class Main {
 
     private ManipulaProduto produtos;
@@ -82,7 +88,7 @@ public class Main {
         double quantidadeQuilo;
         int quantidadeP = 0;
         String resp;
-        boolean ok;
+        boolean ok = false;
 
         System.out.println("Cadastro de produto");
 
@@ -132,7 +138,7 @@ public class Main {
         }
 
         //Fazer alguma pergunta em relação a ser por unidade ou por quilo?
-        //Para poder determinar qual eu adiciono?
+        //Para poder determinar qual eu adiciono?                                   
     }
 
     public void ConsultarProduto() {
@@ -194,7 +200,7 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         int codProduto;
 
-        System.out.println("[Excluir Produto]");
+        System.out.println("Excluir Produto");
         System.out.println("Informe o código do produto: ");
         codProduto = teclado.nextInt();
         teclado.nextLine();
@@ -208,17 +214,23 @@ public class Main {
     }
 
     public void CriarNotaFiscal() {
+        NotaFiscal nf;
         Scanner teclado = new Scanner(System.in);
         int codInfo;
         double quantidadeVendida;
+        double valorT = 0;
         String data = "";
-        NotaFiscal nf = new NotaFiscal(data);
         String resp = "";
         boolean ok;
+        //pegar data atual
+        //pegar relação de itens
 
-        System.out.println("[Criação da Nota Fiscal]");
+        System.out.println("Criação da Nota Fiscal");      
+        
         System.out.println("Qual a data da criação da nota fiscal (dd/MM/yyyy): ");
-        data = teclado.nextLine();
+        data = teclado.nextLine();        
+
+        nf = new NotaFiscal(data);
 
         do {
             System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
@@ -230,7 +242,7 @@ public class Main {
                     System.out.println(produtos.getProduto(codInfo).toString());
                 }
             } while (produtos.getProduto(codInfo) == null);
-
+           
             do {
                 System.out.println("Agora por favor, informe a quantidade vendida deste produto");
                 quantidadeVendida = teclado.nextDouble();
@@ -238,8 +250,8 @@ public class Main {
 
                 Item itemADD = new Item(produtos.getProduto(codInfo), quantidadeVendida);
                 ok = nf.addItem(itemADD);
-                if (ok) {
-                    System.out.println("Este produto foi adicionado a nota fiscal");
+                if (ok) {                                                            
+                    System.out.println("Este produto foi adicionado a nota fiscal");                    
                 } else {
                     System.out.println("A quantidade informada está acima da em estoque");
                 }
@@ -251,9 +263,9 @@ public class Main {
 
         } while (resp.equalsIgnoreCase("Sim"));
 
-        notasFiscais.addNotaFiscal(nf);
+        notasFiscais.addNotaFiscal(nf);      
     }
-
+    
 
     public void ConsultarNotaFiscal() {
 
@@ -267,7 +279,7 @@ public class Main {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         Main mn = new Main();
         mn.menu();
     }

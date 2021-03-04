@@ -7,10 +7,14 @@ package GerenciaDeEstoque;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Usuario
+ */
 public class ManipulaNotaFiscal implements INotasFiscais {
 
     ArrayList<NotaFiscal> notaF = new ArrayList<>();
-
+    
     @Override
     public boolean addNotaFiscal(NotaFiscal nf) {
         boolean ok = false;
@@ -45,7 +49,7 @@ public class ManipulaNotaFiscal implements INotasFiscais {
                 }
             }
         }
-        return notaFISCAL;
+        return notaFISCAL; 
     }
 
     @Override
@@ -58,12 +62,12 @@ public class ManipulaNotaFiscal implements INotasFiscais {
                 }
             }
         }
-        return valorNota;
+        return valorNota; 
     }
 
     @Override
     public boolean addItem(int codigo, Item/*Object*/ item) {
-
+        
         boolean ok = false;
         if (notaF.size() > 0) {
             for (NotaFiscal nota : notaF) {
@@ -89,5 +93,5 @@ public class ManipulaNotaFiscal implements INotasFiscais {
         }
         return ok;
     }
-
+    
 }

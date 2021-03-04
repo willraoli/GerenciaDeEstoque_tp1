@@ -5,6 +5,10 @@
  */
 package GerenciaDeEstoque;
 
+/**
+ *
+ * @author Usuario
+ */
 public class Item {
     private Produto p;
     private double quantidade;
@@ -13,8 +17,8 @@ public class Item {
         this.p = p;
         this.quantidade = quantidade;
     }
-
-
+        
+    
     /**
      * @return the p
      */

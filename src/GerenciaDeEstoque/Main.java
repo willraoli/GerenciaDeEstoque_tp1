@@ -22,6 +22,7 @@ public class Main {
 
     public Main() {
         produtos = new ManipulaProduto();
+        notasFiscais = new ManipulaNotaFiscal();
     }
 
     public void menu() {

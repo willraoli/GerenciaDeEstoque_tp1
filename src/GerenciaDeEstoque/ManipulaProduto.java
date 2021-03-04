@@ -14,12 +14,6 @@ public class ManipulaProduto implements IProdutos {
 
     @Override
     public boolean addProduto(Produto p) {
-//        boolean ok = false;
-//        if (listaProd.size() > 0 && !listaProd.equals(p)) {
-//            listaProd.add(p);
-//            ok = true;
-//        }
-//        return ok;
         return listaProd.add(p);
     }
 

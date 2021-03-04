@@ -18,16 +18,15 @@ public class ManipulaNotaFiscal implements INotasFiscais {
 
     @Override
     public boolean removeNotaFiscal(int codigo) {
-        boolean ok = false;
         if (notaF.size() > 0) {
             for (NotaFiscal nota : notaF) {
                 if (nota.getCodigo() == codigo) {
                     notaF.remove(nota);
-                    ok = true;
+                    return true;
                 }
             }
         }
-        return ok;
+        return false;
     }
 
     @Override
@@ -58,31 +57,28 @@ public class ManipulaNotaFiscal implements INotasFiscais {
 
     @Override
     public boolean addItem(int codigo, Item/*Object*/ item) {
-        
-        boolean ok = false;
         if (notaF.size() > 0) {
             for (NotaFiscal nota : notaF) {
                 if (nota.getCodigo() == codigo) {
                     nota.addItem(item);
-                    ok = true;
+                    return true;
                 }
             }
         }
-        return ok;
+        return false;
     }
 
     @Override
     public boolean removeItem(int codigo, Item/*Object*/ item) {
-        boolean ok = false;
         if (notaF.size() > 0) {
             for (NotaFiscal nota : notaF) {
                 if (nota.getCodigo() == codigo) {
                     nota.removeItem(item);
-                    ok = true;
+                    return true;
                 }
             }
         }
-        return ok;
+        return false;
     }
     
 }

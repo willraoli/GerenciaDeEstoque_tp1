@@ -82,7 +82,7 @@ public class Main {
         double quantidadeQuilo;
         int quantidadeP = 0;
         String resp;
-        boolean ok = false;
+        boolean ok;
 
         System.out.println("Cadastro de produto");
 
@@ -267,7 +267,7 @@ public class Main {
 
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Main mn = new Main();
         mn.menu();
     }

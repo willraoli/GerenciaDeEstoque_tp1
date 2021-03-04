@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package GerenciaDeEstoque;
-
+//TÉSTÉ
 public abstract class Produto {
     protected final int codigo;
     protected String nome;

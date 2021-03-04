@@ -5,6 +5,7 @@
  */
 package GerenciaDeEstoque;
 //TESTE
+//TEste2
 public abstract class Produto {
     protected final int codigo;
     protected String nome;

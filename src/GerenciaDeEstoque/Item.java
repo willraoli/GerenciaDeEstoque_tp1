@@ -5,10 +5,6 @@
  */
 package GerenciaDeEstoque;
 
-/**
- *
- * @author Usuario
- */
 public class Item {
     private Produto p;
     private double quantidade;

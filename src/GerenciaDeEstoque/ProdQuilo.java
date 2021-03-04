@@ -7,7 +7,7 @@ package GerenciaDeEstoque;
 
 public class ProdQuilo extends Produto {
 
-    private double /*float*/ quantidade;
+    private double quantidade;
 
 
     public ProdQuilo(String nome, String descricao, double valor, double /*float*/ quantidade) {

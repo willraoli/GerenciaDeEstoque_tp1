@@ -12,17 +12,15 @@ public class ManipulaProduto implements IProdutos {
 
     private ArrayList<Produto> listaProd = new ArrayList<>();
 
-    /*
-     * ProdQuilo prQuilo = new ProdQuilo(0, "", 0f); prQuilo.
-     */
     @Override
     public boolean addProduto(Produto p) {
-        boolean ok = false;
-        //if (listaProd.size() > 0 && !listaProd.equals(p)) {
-            listaProd.add(p);
-            ok = true;
-       // }
-        return ok;
+//        boolean ok = false;
+//        if (listaProd.size() > 0 && !listaProd.equals(p)) {
+//            listaProd.add(p);
+//            ok = true;
+//        }
+//        return ok;
+        return listaProd.add(p);
     }
 
     @Override

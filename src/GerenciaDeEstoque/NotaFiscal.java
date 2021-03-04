@@ -51,6 +51,10 @@ public class NotaFiscal {
         return false;
     }
 
+    public String toString() {
+       return "Código: " + codigo + "\nData: " + data + "\nValor total: " + valorTotal;
+    }
+
     /**
      * @return the codigo
      */

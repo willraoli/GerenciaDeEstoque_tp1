@@ -17,8 +17,7 @@ public class Item {
         this.p = p;
         this.quantidade = quantidade;
     }
-        
-    
+
     /**
      * @return the p
      */

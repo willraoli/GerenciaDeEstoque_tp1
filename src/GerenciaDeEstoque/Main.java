@@ -7,6 +7,7 @@ package GerenciaDeEstoque;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -251,7 +252,8 @@ public class Main {
                 Item itemADD = new Item(produtos.getProduto(codInfo), quantidadeVendida);
                 ok = nf.addItem(itemADD);
                 if (ok) {                                                            
-                    System.out.println("Este produto foi adicionado a nota fiscal");                    
+                    System.out.println("Este produto foi adicionado a nota fiscal");
+                    notasFiscais.addNotaFiscal(nf);
                 } else {
                     System.out.println("A quantidade informada está acima da em estoque");
                 }
@@ -262,8 +264,7 @@ public class Main {
             resp = teclado.nextLine();
 
         } while (resp.equalsIgnoreCase("Sim"));
-
-        notasFiscais.addNotaFiscal(nf);      
+        System.out.println("Saiu do loop");
     }
     
 

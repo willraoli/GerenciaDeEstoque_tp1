@@ -10,10 +10,10 @@ import java.util.ArrayList;
 public class ManipulaNotaFiscal implements INotasFiscais {
 
     ArrayList<NotaFiscal> notaF = new ArrayList<>();
-    
+
     @Override
     public boolean addNotaFiscal(NotaFiscal nf) {
-            return notaF.add(nf);
+        return notaF.add(nf);
     }
 
     @Override
@@ -31,11 +31,9 @@ public class ManipulaNotaFiscal implements INotasFiscais {
 
     public double getValorTotalAllNotaFiscal() {
         double valorTotal = 0;
-        if (!notaF.isEmpty()) {
-            for (NotaFiscal n : notaF){
-                if (n.getCodigo() != 0) {
-                    valorTotal += n.getValorTotal();
-                }
+        for (NotaFiscal n : notaF) {
+            if (n.getCodigo() != 0) {
+                valorTotal += n.getValorTotal();
             }
         }
         return valorTotal;
@@ -51,7 +49,7 @@ public class ManipulaNotaFiscal implements INotasFiscais {
                 }
             }
         }
-        return notaFISCAL; 
+        return notaFISCAL;
     }
 
     @Override
@@ -64,7 +62,7 @@ public class ManipulaNotaFiscal implements INotasFiscais {
                 }
             }
         }
-        return valorNota; 
+        return valorNota;
     }
 
     @Override
@@ -92,5 +90,5 @@ public class ManipulaNotaFiscal implements INotasFiscais {
         }
         return false;
     }
-    
+
 }

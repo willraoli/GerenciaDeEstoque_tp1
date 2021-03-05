@@ -88,13 +88,13 @@ public class Main {
 
         System.out.println("[CADASTRO DE PRODUTO]");
 
-        System.out.println("Informe o nome do produto:");
+        System.out.print("Informe o nome do produto: ");
         nomeProduto = teclado.nextLine();
 
-        System.out.println("Dê uma descrição para o produto:");
+        System.out.print("Dê uma descrição para o produto: ");
         descricaoProduto = teclado.nextLine();
 
-        System.out.println("Informe o valor do produto:");
+        System.out.print("Informe o valor do produto: ");
         valorProduto = teclado.nextDouble();
         teclado.nextLine();
 
@@ -106,7 +106,7 @@ public class Main {
         if (resp.equalsIgnoreCase("Unidade")) {
             do {
                 try {
-                    System.out.println("Informe a quantidade do produto:");
+                    System.out.print("Informe a quantidade do produto: ");
                     quantidadeP = teclado.nextInt();
                     ok = true;
                 } catch (Exception IO) {
@@ -143,7 +143,7 @@ public class Main {
         int codInfo;
         System.out.println("[CONSULTAR PRODUTO]");
         do {
-            System.out.println("Informe o código do produto que deseja consultar:");
+            System.out.print("Informe o código do produto que deseja consultar: ");
             codInfo = teclado.nextInt();
             teclado.nextLine();
             if (produtos.getProduto(codInfo) != null) {
@@ -166,17 +166,17 @@ public class Main {
             if (produtos.getProduto(codigo) != null) {
                 System.out.println(produtos.getProduto(codigo).toString());
 
-                System.out.print("Para qual nome você quer alterar? ");
+                System.out.println("Para qual nome você quer alterar?");
                 nome = tc.nextLine();
 
-                System.out.print("Qual será a nova descrição? ");
+                System.out.println("Qual será a nova descrição?");
                 descricao = tc.nextLine();
 
-                System.out.print("Qual o valor a ser alterado? ");
+                System.out.println("Qual o valor a ser alterado?");
                 valor = tc.nextDouble();
                 tc.nextLine();
 
-                System.out.print("Qual a quantidade a ser alterada?");
+                System.out.println("Qual a quantidade a ser alterada?");
                 quantidade = tc.nextDouble();
                 tc.nextLine();
 
@@ -197,7 +197,7 @@ public class Main {
         int codProduto;
 
         System.out.println("[EXCLUIR PRODUTO]");
-        System.out.println("Informe o código do produto: ");
+        System.out.print("Informe o código do produto: ");
         codProduto = teclado.nextInt();
         teclado.nextLine();
 
@@ -222,7 +222,7 @@ public class Main {
         System.out.println("[CRIAÇÃO DA NOTA FISCAL]");
         nf = new NotaFiscal(data);
 
-        System.out.print("Código da nota fiscal: " + nf.getCodigo());
+        System.out.println("Código da nota fiscal: " + nf.getCodigo());
 
         System.out.print("Qual a data da criação da nota fiscal (dd/MM/yyyy): ");
         data = teclado.nextLine();
@@ -241,22 +241,22 @@ public class Main {
             } while (produtos.getProduto(codInfo) == null);
            
             do {
-                System.out.print("Agora por favor, informe a quantidade vendida deste produto");
+                System.out.print("Agora por favor, informe a quantidade vendida deste produto: ");
                 quantidadeVendida = teclado.nextDouble();
                 teclado.nextLine();
 
                 Item itemADD = new Item(produtos.getProduto(codInfo), quantidadeVendida);
                 ok = nf.addItem(itemADD);
                 if (ok) {                                                            
-                    System.out.println("Este produto foi adicionado a nota fiscal");
+                    System.out.println("Este produto foi adicionado a nota fiscal.");
                     notasFiscais.addNotaFiscal(nf);
                 } else {
-                    System.out.println("A quantidade informada está acima da em estoque");
+                    System.out.println("A quantidade informada está acima da em estoque.");
                 }
 
             } while (!ok);
 
-            System.out.print("Você quer adicionar mais um produto? [Sim/Não]");
+            System.out.println("Você quer adicionar mais um produto? [Sim/Não]");
             resp = teclado.nextLine();
 
         } while (resp.equalsIgnoreCase("sim"));
@@ -294,7 +294,7 @@ public class Main {
 
         switch(respStr){
             case "1":
-                System.out.print("Qual o código do produto que você deseja alterar?");
+                System.out.println("Qual o código do produto que você deseja alterar?");
                 respProduto = in.nextInt();
                 in.nextLine();
 

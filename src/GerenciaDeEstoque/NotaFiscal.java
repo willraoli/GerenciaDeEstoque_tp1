@@ -6,27 +6,14 @@
 package GerenciaDeEstoque;
 
 import java.util.ArrayList;
-import java.util.Date;
 
-/**
- *
- * @author Usuario
- */
 public class NotaFiscal {
    private final int codigo;
    private String data;
    private double valorTotal;
    private ArrayList<Item> relacaoItens = new ArrayList<>();
    private static int nrCodigo = 0;
-   //ter uma quantidade vendida
-   
-//   public NotaFiscal(String data, double valorTotal, ArrayList relacaoItens){
-//       codigo = 1 + nrCodigo;
-//       NotaFiscal.nrCodigo++;
-//       this.data = data;
-//       this.valorTotal = valorTotal;
-//       this.relacaoItens = relacaoItens;
-//   }
+
    
    public NotaFiscal(String data){
        codigo = 1 + nrCodigo;

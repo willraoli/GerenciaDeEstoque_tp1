@@ -100,10 +100,10 @@ public class Main {
 
         //Fazer uma pergunta antes
         System.out.println("Deseja cadastrar por Unidade ou Quilo");
-        System.out.println("[Unidade]/[Quilo]:");
+        System.out.print("[Unidade]/[Quilo]: ");
         resp = teclado.nextLine();
 
-        if (resp.equalsIgnoreCase("Unidade")) {
+        if (resp.equalsIgnoreCase("unidade")) {
             do {
                 try {
                     System.out.print("Informe a quantidade do produto: ");
@@ -120,8 +120,8 @@ public class Main {
             quantidadeProduto = quantidadeP;
 
             Produto pUnidade = new ProdUnidade(nomeProduto, descricaoProduto, valorProduto, quantidadeProduto);
-            System.out.println("Código do produto " + pUnidade.getCodigo());
-            System.out.println(produtos.addProduto(pUnidade));
+            System.out.println("Código do produto: " + pUnidade.getCodigo());
+            produtos.addProduto(pUnidade);
 
         } else if (resp.equalsIgnoreCase("Quilo")) {
             System.out.println("Informe a quantidade do produto:");
@@ -129,8 +129,8 @@ public class Main {
             teclado.nextLine();
 
             Produto pQuilo = new ProdQuilo(nomeProduto, descricaoProduto, valorProduto, quantidadeQuilo);
-            System.out.println("Código do produto " + pQuilo.getCodigo());
-            System.out.println(produtos.addProduto(pQuilo));
+            System.out.println("Código do produto: " + pQuilo.getCodigo());
+            produtos.addProduto(pQuilo);
         }
 
         //Fazer alguma pergunta em relação a ser por unidade ou por quilo?

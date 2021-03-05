@@ -267,7 +267,6 @@ public class Main {
 
         System.out.print("Insira o código da nota fiscal a ser consultada: ");
         int resp = in.nextInt();
-        in.nextLine();
 
         System.out.println(notasFiscais.getNotaFiscal(resp).toString());
     }
@@ -279,31 +278,28 @@ public class Main {
 
         System.out.print("Insira o código da nota fiscal a ser alterada: ");
         respInt = in.nextInt();
-        in.nextLine();
 
         NotaFiscal notaAntiga = notasFiscais.getNotaFiscal(respInt); //pegar dados da nota fiscal antiga [GAMBIARRA]
 
         System.out.println(notasFiscais.getNotaFiscal(respInt).toString());
-
         System.out.println("O que você deseja fazer?");
         System.out.println("[1] Adicionar item");
         System.out.println("[2] Remover item");
         // adicionar mudança de quantidade
-        String respStr = in.nextLine();
+        int respSwitch = in.nextInt();
+        in.nextLine();
 
-        switch(respStr){
-            case "1":
-                System.out.println("Qual o código do produto que você deseja alterar?");
+        switch(respSwitch){
+            case 1:
+                System.out.println("Qual o código do produto que você deseja adicionar?");
                 respProduto = in.nextInt();
-                in.nextLine();
-
                 System.out.println("Será alterado:");
                 System.out.println(produtos.getProduto(respProduto).toString());
 
                 Item i = new Item(produtos.getProduto(respProduto), produtos.getProduto(respProduto).getQuantidade());
                 notasFiscais.addItem(respInt, i);
                 break;
-            case "2":
+            case 2:
                 break;
             default:
                 System.out.println("Selecione uma das opções.");

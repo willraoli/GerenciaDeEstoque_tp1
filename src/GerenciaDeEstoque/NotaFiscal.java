@@ -20,13 +20,13 @@ public class NotaFiscal {
    private static int nrCodigo = 0;
    //ter uma quantidade vendida
    
-   public NotaFiscal(String data, double valorTotal, ArrayList relacaoItens){
-       codigo = 1 + nrCodigo;
-       NotaFiscal.nrCodigo++;
-       this.data = data;
-       this.valorTotal = valorTotal;
-       this.relacaoItens = relacaoItens;
-   }
+//   public NotaFiscal(String data, double valorTotal, ArrayList relacaoItens){
+//       codigo = 1 + nrCodigo;
+//       NotaFiscal.nrCodigo++;
+//       this.data = data;
+//       this.valorTotal = valorTotal;
+//       this.relacaoItens = relacaoItens;
+//   }
    
    public NotaFiscal(String data){
        codigo = 1 + nrCodigo;
@@ -52,13 +52,14 @@ public class NotaFiscal {
     }
 
     public String toString() {
-       String itens = "";
+       String itens = "Código: " + codigo + "\nData: " + data + "\n";
 
        for (Item i : relacaoItens) {
-           itens = itens + "\n\tNome: " + i.getP().getNome() + "\n\tCódigo: " + i.getP().getCodigo() + "\n\tQuantidade: " + i.getP().getQuantidade() + "\n\tPreço: " + i.getP().getValor();
+           itens += i.toString() + "\n";
        }
+       itens += "Total da nota: " + getValorTotal();
 
-       return "Código: " + codigo + "\nData: " + data + "\nItens: " + itens;
+       return itens;
     }
 
 
@@ -75,6 +76,10 @@ public class NotaFiscal {
     }
 
     public double getValorTotal() {
+       double valorTotal = 0;
+       for (Item i : relacaoItens) {
+           valorTotal += i.getValorTotal();
+       }
         return valorTotal;
     }
 

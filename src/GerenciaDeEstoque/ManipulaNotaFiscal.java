@@ -29,6 +29,18 @@ public class ManipulaNotaFiscal implements INotasFiscais {
         return false;
     }
 
+    public double getValorTotalAllNotaFiscal() {
+        double valorTotal = 0;
+        if (!notaF.isEmpty()) {
+            for (NotaFiscal n : notaF){
+                if (n.getCodigo() != 0) {
+                    valorTotal += n.getValorTotal();
+                }
+            }
+        }
+        return valorTotal;
+    }
+
     @Override
     public NotaFiscal getNotaFiscal(int codigo) {
         NotaFiscal notaFISCAL = null;

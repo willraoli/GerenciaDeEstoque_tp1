@@ -30,6 +30,7 @@ public class Main {
             System.out.println("5. Gerar uma nota fiscal");
             System.out.println("6. Consultar nota fiscal");
             System.out.println("7. Alterar nota fiscal");
+            System.out.println("8. Consultar total vendido");
             System.out.println("0. Sair");
             op = tc.nextInt();
             tc.nextLine();
@@ -61,6 +62,10 @@ public class Main {
 
                 case 7:
                     alterarNotaFiscal();
+                    break;
+
+                case 8:
+                    totalVendido();
                     break;
 
                 case 0:
@@ -316,6 +321,8 @@ public class Main {
     }
 
     public void totalVendido() {
+        System.out.println("[TOTAL VENDIDO]");
+        System.out.println("O total vendido é de: R$ " + notasFiscais.getValorTotalAllNotaFiscal() + ".");
     }
 
     public static void main(String[] args) {

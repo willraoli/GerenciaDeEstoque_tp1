@@ -1,8 +1,3 @@
 # Project exclude paths
 /out/
 /bin/
-<<<<<<< HEAD
-=======
-*.iml
-/.idea/
->>>>>>> parent of 741b7be (Update .gitignore)

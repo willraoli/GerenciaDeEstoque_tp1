@@ -291,8 +291,8 @@ public class Main {
 
         System.out.println("Insira o código da nota fiscal a ser alterada: ");
         respInt = tc.nextInt();
-
         System.out.println(notasFiscais.getNotaFiscal(respInt).toString());
+
         System.out.println("O que você deseja fazer?");
         System.out.println("[1] Adicionar item");
         System.out.println("[2] Remover item");

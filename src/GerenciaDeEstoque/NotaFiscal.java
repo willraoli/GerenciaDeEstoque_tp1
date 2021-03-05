@@ -54,10 +54,6 @@ public class NotaFiscal {
         return codigo;
     }
 
-    public String getData() {
-        return data;
-    }
-
     public void setData(String data) {
         this.data = data;
     }
@@ -70,12 +66,16 @@ public class NotaFiscal {
         return valorTotal;
     }
 
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
     public ArrayList<Item> getRelacaoItens() {
         return relacaoItens;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
     public void setRelacaoItens(ArrayList<Item> relacaoItens) {

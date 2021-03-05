@@ -55,10 +55,6 @@ public abstract class Produto {
         this.nome = nome;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
@@ -69,6 +65,10 @@ public abstract class Produto {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public String getDescricao() {
+        return descricao;
     }
 
 }

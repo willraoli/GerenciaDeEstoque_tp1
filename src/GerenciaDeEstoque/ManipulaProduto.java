@@ -19,29 +19,36 @@ public class ManipulaProduto implements IProdutos {
 
     @Override
     public boolean removeProduto(int codigo) {
-        boolean ok = false;
         Produto removProduto = null;
-        if (listaProd.size() > 0) {
-            for (Produto prod : listaProd) {
-                if (prod.getCodigo() == codigo) {
-                   removProduto = prod; 
-                }
+        for (Produto prod : listaProd) {
+            if (prod.getCodigo() == codigo) {
+                removProduto = prod;
             }
-            listaProd.remove(removProduto);
-            ok = true;
         }
-        return ok;
+        return listaProd.remove(removProduto);
     }
+
+//    @Override
+//    public boolean removeProduto(int codigo) {
+//        boolean ok = false;
+//        Produto removProduto = null;
+//        if (listaProd.size() > 0) {
+//            for (Produto prod : listaProd) {
+//                if (prod.getCodigo() == codigo) {
+//                    removProduto = prod;
+//                }
+//            }
+//            listaProd.remove(removProduto);
+//            ok = true;
+//        }
+//        return ok;
+//    }
 
     @Override
     public Produto getProduto(int codigo) {
-//        Produto prodNovo = null;
-        if (listaProd.size() > 0) {
-            for (Produto prod : listaProd) {
-                if (prod.getCodigo() == codigo) {
-//                    prodNovo = prod;
-                    return prod;                    
-                }
+        for (Produto prod : listaProd) {
+            if (prod.getCodigo() == codigo) {
+                return prod;
             }
         }
         return null;
@@ -49,12 +56,10 @@ public class ManipulaProduto implements IProdutos {
 
     @Override
     public boolean updateQuantidade(int codigo, double nova) {
-        if (listaProd.size() > 0) {
-            for (Produto prod : listaProd) {
-                if (prod.getCodigo() == codigo) {
-                    prod.setQuantidade(nova);  
-                    return true;
-                }
+        for (Produto prod : listaProd) {
+            if (prod.getCodigo() == codigo) {
+                prod.setQuantidade(nova);
+                return true;
             }
         }
         return false;
@@ -62,12 +67,10 @@ public class ManipulaProduto implements IProdutos {
 
     @Override
     public boolean updatePreco(int codigo, double novo) {
-        if (listaProd.size() > 0) {
-            for (Produto prod : listaProd) {
-                if (prod.getCodigo() == codigo) {
-                    prod.setValor(novo);
-                    return true;
-                }
+        for (Produto prod : listaProd) {
+            if (prod.getCodigo() == codigo) {
+                prod.setValor(novo);
+                return true;
             }
         }
         return false;
@@ -75,25 +78,21 @@ public class ManipulaProduto implements IProdutos {
 
     @Override
     public boolean addQuantidade(int codigo, double quantidade) {
-        if (listaProd.size() > 0) {
-            for (Produto prod : listaProd) {
-                if (prod.getCodigo() == codigo) {                   
-                    prod.addQuantidade(quantidade);
-                    return true;                   
-                }
+        for (Produto prod : listaProd) {
+            if (prod.getCodigo() == codigo) {
+                prod.addQuantidade(quantidade);
+                return true;
             }
         }
         return false;
     }
 
     @Override
-    public boolean subQuantidade(int codigo, double quantidade) {        
-        if (listaProd.size() > 0) {
-            for (Produto prod : listaProd) {
-                if (prod.getCodigo() == codigo) {
-                    prod.subQuantidade(quantidade);
-                    return true;
-                }
+    public boolean subQuantidade(int codigo, double quantidade) {
+        for (Produto prod : listaProd) {
+            if (prod.getCodigo() == codigo) {
+                prod.subQuantidade(quantidade);
+                return true;
             }
         }
         return false;

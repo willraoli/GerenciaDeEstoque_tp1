@@ -275,7 +275,7 @@ public class Main {
         System.out.println(notasFiscais.getNotaFiscal(resp).toString());
     }
 
-    public void alterarNotaFiscal() {
+    public void alterarNotaFiscal() { // adicionar mudança de quantidade
         Scanner in = new Scanner(System.in);
         int respInt, respProduto;
         NotaFiscal nf;
@@ -284,13 +284,11 @@ public class Main {
         System.out.println("Insira o código da nota fiscal a ser alterada: ");
         respInt = in.nextInt();
 
-        NotaFiscal notaAntiga = notasFiscais.getNotaFiscal(respInt); //pegar dados da nota fiscal antiga [GAMBIARRA]
-
         System.out.println(notasFiscais.getNotaFiscal(respInt).toString());
         System.out.println("O que você deseja fazer?");
         System.out.println("[1] Adicionar item");
         System.out.println("[2] Remover item");
-        // adicionar mudança de quantidade
+
         int respSwitch = in.nextInt();
         in.nextLine();
 

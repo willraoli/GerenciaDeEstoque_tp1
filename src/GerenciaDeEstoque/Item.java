@@ -15,6 +15,10 @@ public class Item {
         this.quantidade = quantidade;
     }
 
+    public Item(Produto p){
+        this.p = p;
+    }
+
     public double getValorTotal(){
         return p.getValor() * quantidade;
     }

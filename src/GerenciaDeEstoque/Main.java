@@ -40,31 +40,31 @@ public class Main {
 
             switch (op) {
                 case 1:
-                    CadastrarProduto();
+                    cadastrarProduto();
                     break;
 
                 case 2:
-                    ConsultarProduto();
+                    consultarProduto();
                     break;
 
                 case 3:
-                    AlterarProduto();
+                    alterarProduto();
                     break;
 
                 case 4:
-                    ExcluirProduto();
+                    excluirProduto();
                     break;
 
                 case 5:
-                    CriarNotaFiscal();
+                    criarNotaFiscal();
                     break;
 
                 case 6:
-                    ConsultarNotaFiscal();
+                    consultarNotaFiscal();
                     break;
 
                 case 7:
-                    AlterarNotaFiscal();
+                    alterarNotaFiscal();
                     break;
 
                 case 0:
@@ -79,7 +79,7 @@ public class Main {
         } while (op != 0);
     }
 
-    public void CadastrarProduto() {
+    public void cadastrarProduto() {
         Scanner teclado = new Scanner(System.in);
         String nomeProduto;
         String descricaoProduto;
@@ -90,7 +90,7 @@ public class Main {
         String resp;
         boolean ok = false;
 
-        System.out.println("Cadastro de produto");
+        System.out.println("[CADASTRO DE PRODUTO]");
 
         System.out.println("Informe o nome do produto:");
         nomeProduto = teclado.nextLine();
@@ -141,11 +141,11 @@ public class Main {
         //Para poder determinar qual eu adiciono?                                   
     }
 
-    public void ConsultarProduto() {
+    public void consultarProduto() {
 
         Scanner teclado = new Scanner(System.in);
         int codInfo;
-        System.out.println("Consultar produto");
+        System.out.println("[CONSULTAR PRODUTO]");
         do {
             System.out.println("Informe o código do produto que deseja consultar:");
             codInfo = teclado.nextInt();
@@ -156,31 +156,31 @@ public class Main {
         } while (produtos.getProduto(codInfo) == null);
     }
 
-    public void AlterarProduto() {
+    public void alterarProduto() {
         Scanner tc = new Scanner(System.in);
         int codigo;
         String descricao, nome;
         double valor;
         double quantidade;
-        System.out.println("Alterar produto");
+        System.out.println("[ALTERAR PRODUTO]");
         do {
-            System.out.println("Informe o código do produto que deseja consultar:");
+            System.out.print("Informe o código do produto que deseja consultar:");
             codigo = tc.nextInt();
             tc.nextLine();
             if (produtos.getProduto(codigo) != null) {
                 System.out.println(produtos.getProduto(codigo).toString());
 
-                System.out.println("Para qual nome você quer alterar? ");
+                System.out.print("Para qual nome você quer alterar? ");
                 nome = tc.nextLine();
 
-                System.out.println("Qual será a nova descrição? ");
+                System.out.print("Qual será a nova descrição? ");
                 descricao = tc.nextLine();
 
-                System.out.println("Qual o valor a ser alterado? ");
+                System.out.print("Qual o valor a ser alterado? ");
                 valor = tc.nextDouble();
                 tc.nextLine();
 
-                System.out.println("Qual a quantidade a ser alterada?");
+                System.out.print("Qual a quantidade a ser alterada?");
                 quantidade = tc.nextDouble();
                 tc.nextLine();
 
@@ -196,11 +196,11 @@ public class Main {
 
     }
 
-    public void ExcluirProduto() {
+    public void excluirProduto() {
         Scanner teclado = new Scanner(System.in);
         int codProduto;
 
-        System.out.println("Excluir Produto");
+        System.out.println("[EXCLUIR PRODUTO]");
         System.out.println("Informe o código do produto: ");
         codProduto = teclado.nextInt();
         teclado.nextLine();
@@ -213,7 +213,7 @@ public class Main {
         }
     }
 
-    public void CriarNotaFiscal() {
+    public void criarNotaFiscal() {
         NotaFiscal nf;
         Scanner teclado = new Scanner(System.in);
         int codInfo;
@@ -222,20 +222,19 @@ public class Main {
         String data = "";
         String resp = "";
         boolean ok;
-        //pegar data atual
-        //pegar relação de itens
 
-        System.out.println("Criação da Nota Fiscal");
+        System.out.println("[CRIAÇÃO DA NOTA FISCAL]");
         nf = new NotaFiscal(data);
-        System.out.println("Código da nota fiscal: " + nf.getCodigo());
 
-        System.out.println("Qual a data da criação da nota fiscal (dd/MM/yyyy): ");
+        System.out.print("Código da nota fiscal: " + nf.getCodigo());
+
+        System.out.print("Qual a data da criação da nota fiscal (dd/MM/yyyy): ");
         data = teclado.nextLine();
         nf.setData(data);
 
 
         do {
-            System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
+            System.out.print("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
             codInfo = teclado.nextInt();
             teclado.nextLine();
 
@@ -246,7 +245,7 @@ public class Main {
             } while (produtos.getProduto(codInfo) == null);
            
             do {
-                System.out.println("Agora por favor, informe a quantidade vendida deste produto");
+                System.out.print("Agora por favor, informe a quantidade vendida deste produto");
                 quantidadeVendida = teclado.nextDouble();
                 teclado.nextLine();
 
@@ -261,15 +260,14 @@ public class Main {
 
             } while (!ok);
 
-            System.out.println("Você quer adicionar mais um produto? [Sim/Não]");
+            System.out.print("Você quer adicionar mais um produto? [Sim/Não]");
             resp = teclado.nextLine();
 
-        } while (resp.equalsIgnoreCase("Sim"));
-        System.out.println("Saiu do loop");
+        } while (resp.equalsIgnoreCase("sim"));
     }
     
 
-    public void ConsultarNotaFiscal() {
+    public void consultarNotaFiscal() {
         Scanner in = new Scanner(System.in);
 
         System.out.print("Insira o código da nota fiscal a ser consultada: ");
@@ -279,7 +277,7 @@ public class Main {
         System.out.println(notasFiscais.getNotaFiscal(resp).toString());
     }
 
-    public void AlterarNotaFiscal() {
+    public void alterarNotaFiscal() {
         Scanner in = new Scanner(System.in);
         int respInt, respProduto;
         NotaFiscal nf;
@@ -300,7 +298,7 @@ public class Main {
 
         switch(respStr){
             case "1":
-                System.out.println("Qual o código do produto que você deseja alterar?");
+                System.out.print("Qual o código do produto que você deseja alterar?");
                 respProduto = in.nextInt();
                 in.nextLine();
 
@@ -317,7 +315,7 @@ public class Main {
         }
     }
 
-    public void TotalVendido() {
+    public void totalVendido() {
     }
 
     public static void main(String args[]) {

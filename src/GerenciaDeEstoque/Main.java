@@ -84,7 +84,7 @@ public class Main {
         double quantidadeQuilo;
         int quantidadeP = 0;
         String resp;
-        boolean ok = false;
+        boolean ok;
 
         System.out.println("[CADASTRO DE PRODUTO]");
 
@@ -126,7 +126,7 @@ public class Main {
         } else if (resp.equalsIgnoreCase("Quilo")) {
             System.out.println("Informe a quantidade do produto:");
             quantidadeQuilo = teclado.nextDouble();
-            teclado = new Scanner(System.in);
+            teclado.nextLine();
 
             Produto pQuilo = new ProdQuilo(nomeProduto, descricaoProduto, valorProduto, quantidadeQuilo);
             System.out.println("Código do produto " + pQuilo.getCodigo());
@@ -214,9 +214,8 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         int codInfo;
         double quantidadeVendida;
-        double valorT = 0;
         String data = "";
-        String resp = "";
+        String resp;
         boolean ok;
 
         System.out.println("[CRIAÇÃO DA NOTA FISCAL]");
@@ -314,7 +313,7 @@ public class Main {
     public void totalVendido() {
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Main mn = new Main();
         mn.menu();
     }

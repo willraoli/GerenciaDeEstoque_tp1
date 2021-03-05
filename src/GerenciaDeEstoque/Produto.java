@@ -13,10 +13,7 @@ public abstract class Produto {
     protected double valor;
     protected static int nCodigo = 0;
 
-    // private double quantidade; --> quantidade int(unidade) e quantidade float(kg)
-    // [usar float como descritor do método]
     public Produto(String nome) {
-
         codigo = 1 + nCodigo;
         this.nome = nome;
         this.descricao = "";

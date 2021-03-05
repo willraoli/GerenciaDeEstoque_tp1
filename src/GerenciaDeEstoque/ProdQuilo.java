@@ -7,9 +7,9 @@ package GerenciaDeEstoque;
 
 public class ProdQuilo extends Produto {
 
-    private double /*float*/ quantidade;
+    private double quantidade;
 
-    public ProdQuilo(String nome, String descricao, double valor, double /*float*/ quantidade) {
+    public ProdQuilo(String nome, String descricao, double valor, double quantidade) {
         super(nome, descricao, valor);
         this.quantidade = quantidade;
     }
@@ -38,9 +38,6 @@ public class ProdQuilo extends Produto {
         return quantidade;
     }
 
-    /*public void setQuantidade(float quantidade) {
-        this.quantidade = quantidade;
-    }*/
     @Override
     public void setQuantidade(double q) {
         this.quantidade = q;

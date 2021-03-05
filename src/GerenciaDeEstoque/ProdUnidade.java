@@ -10,7 +10,6 @@ package GerenciaDeEstoque;
 public class ProdUnidade extends Produto {
 
     private int quantidade;
-    private Produto p;
     
     public ProdUnidade(String nome, String descricao, double valor, int quantidade) {
         super(nome, descricao, valor);
@@ -39,10 +38,6 @@ public class ProdUnidade extends Produto {
     public double getQuantidade() {
         return quantidade;
     }
-
-    /*public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }*/
 
     @Override
     public void setQuantidade(double q) {

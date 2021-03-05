@@ -35,11 +35,11 @@ public class ManipulaProduto implements IProdutos {
 
     @Override
     public Produto getProduto(int codigo) {
-        Produto prodNovo = null;
+//        Produto prodNovo = null;
         if (listaProd.size() > 0) {
             for (Produto prod : listaProd) {
                 if (prod.getCodigo() == codigo) {
-                    prodNovo = prod;
+//                    prodNovo = prod;
                     return prod;                    
                 }
             }
@@ -49,35 +49,32 @@ public class ManipulaProduto implements IProdutos {
 
     @Override
     public boolean updateQuantidade(int codigo, double nova) {
-        boolean ok = false;
         if (listaProd.size() > 0) {
             for (Produto prod : listaProd) {
                 if (prod.getCodigo() == codigo) {
                     prod.setQuantidade(nova);  
-                    ok = true;
+                    return true;
                 }
             }
         }
-        return ok;
+        return false;
     }
 
     @Override
     public boolean updatePreco(int codigo, double novo) {
-        boolean ok = false;
         if (listaProd.size() > 0) {
             for (Produto prod : listaProd) {
                 if (prod.getCodigo() == codigo) {
                     prod.setValor(novo);
-                    ok = true;
+                    return true;
                 }
             }
         }
-        return ok;
+        return false;
     }
 
     @Override
     public boolean addQuantidade(int codigo, double quantidade) {
-        
         if (listaProd.size() > 0) {
             for (Produto prod : listaProd) {
                 if (prod.getCodigo() == codigo) {                   

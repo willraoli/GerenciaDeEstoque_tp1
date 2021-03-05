@@ -311,7 +311,7 @@ public class Main {
 //                notasFiscais.removeItem(respProduto, );
                 break;
             default:
-                System.out.println("Selecione uma das opções.");
+                System.out.println("Opção inválida.");
         }
     }
 

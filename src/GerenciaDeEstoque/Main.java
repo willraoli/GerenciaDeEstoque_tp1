@@ -11,7 +11,7 @@ public class Main {
 
     private ManipulaProduto produtos;
     private ManipulaNotaFiscal notasFiscais;
-    public Scanner tc;
+    private Scanner tc;
 
     public Main() {
         produtos = new ManipulaProduto();

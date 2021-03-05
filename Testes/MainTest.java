@@ -1,5 +1,4 @@
-package GerenciaDeEstoque;
-
+import GerenciaDeEstoque.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.opentest4j.AssertionFailedError;

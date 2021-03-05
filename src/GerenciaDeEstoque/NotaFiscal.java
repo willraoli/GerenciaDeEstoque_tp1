@@ -52,53 +52,40 @@ public class NotaFiscal {
     }
 
     public String toString() {
-       return "Código: " + codigo + "\nData: " + data + "\nValor total: " + valorTotal;
+       String itens = "";
+
+       for (Item i : relacaoItens) {
+           itens = itens + "\n\tNome: " + i.getP().getNome() + "\n\tCódigo: " + i.getP().getCodigo() + "\n\tQuantidade: " + i.getP().getQuantidade() + "\n\tPreço: " + i.getP().getValor();
+       }
+
+       return "Código: " + codigo + "\nData: " + data + "\nItens: " + itens;
     }
 
-    /**
-     * @return the codigo
-     */
+
     public int getCodigo() {
         return codigo;
     }
-    /**
-     * @return the data
-     */
+
     public String getData() {
         return data;
     }
 
-    /**
-     * @param data the data to set
-     */
     public void setData(String data) {
         this.data = data;
     }
 
-    /**
-     * @return the valorTotal
-     */
     public double getValorTotal() {
         return valorTotal;
     }
 
-    /**
-     * @param valorTotal the valorTotal to set
-     */
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
 
-    /**
-     * @return the relacaoItens
-     */
     public ArrayList<Item> getRelacaoItens() {
         return relacaoItens;
     }
 
-    /**
-     * @param relacaoItens the relacaoItens to set
-     */
     public void setRelacaoItens(ArrayList<Item> relacaoItens) {
         this.relacaoItens = relacaoItens;
     }

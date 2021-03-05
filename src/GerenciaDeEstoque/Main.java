@@ -64,6 +64,7 @@ public class Main {
                     break;
 
                 case 6:
+                    ConsultarNotaFiscal();
                     break;
 
                 case 7:
@@ -227,12 +228,14 @@ public class Main {
         //pegar data atual
         //pegar relação de itens
 
-        System.out.println("Criação da Nota Fiscal");      
-        
-        System.out.println("Qual a data da criação da nota fiscal (dd/MM/yyyy): ");
-        data = teclado.nextLine();        
-
+        System.out.println("Criação da Nota Fiscal");
         nf = new NotaFiscal(data);
+        System.out.println("Código da nota fiscal: " + nf.getCodigo());
+
+        System.out.println("Qual a data da criação da nota fiscal (dd/MM/yyyy): ");
+        data = teclado.nextLine();
+        nf.setData(data);
+
 
         do {
             System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
@@ -270,7 +273,13 @@ public class Main {
     
 
     public void ConsultarNotaFiscal() {
+        Scanner in = new Scanner(System.in);
 
+        System.out.print("Insira o código da nota fiscal a ser consultada: ");
+        int resp = in.nextInt();
+        in.nextLine();
+
+        System.out.println(notasFiscais.getNotaFiscal(resp).toString());
     }
 
     public void AlterarNotaFiscal() {

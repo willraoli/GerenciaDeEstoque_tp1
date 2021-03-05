@@ -111,7 +111,7 @@ public class Main {
         if (resp.equalsIgnoreCase("unidade")) {
             do {
                 try {
-                    System.out.print("Informe a quantidade do produto: ");
+                    System.out.println("Informe a quantidade do produto: ");
                     quantidadeP = teclado.nextInt();
                     ok = true;
                 } catch (Exception IO) {
@@ -125,7 +125,7 @@ public class Main {
             quantidadeProduto = quantidadeP;
 
             Produto pUnidade = new ProdUnidade(nomeProduto, descricaoProduto, valorProduto, quantidadeProduto);
-            System.out.println("Código do produto: " + pUnidade.getCodigo());
+            System.out.println(pUnidade.toString());
             produtos.addProduto(pUnidade);
 
         } else if (resp.equalsIgnoreCase("Quilo")) {
@@ -134,7 +134,7 @@ public class Main {
             teclado.nextLine();
 
             Produto pQuilo = new ProdQuilo(nomeProduto, descricaoProduto, valorProduto, quantidadeQuilo);
-            System.out.println("Código do produto: " + pQuilo.getCodigo());
+            System.out.println(pQuilo.toString());
             produtos.addProduto(pQuilo);
         }
 
@@ -209,8 +209,7 @@ public class Main {
         if (produtos.getProduto(codProduto) != null) {
             System.out.println(produtos.getProduto(codProduto).toString());
             System.out.println(produtos.getProduto(codProduto).getNome() + " foi excluído.");
-            //produtos.removeProduto(codProduto);
-            System.out.println(produtos.removeProduto(codProduto));
+            produtos.removeProduto(codProduto);
         }
     }
 

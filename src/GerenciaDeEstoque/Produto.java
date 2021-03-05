@@ -40,7 +40,7 @@ public abstract class Produto {
     
 
     public String toString() {
-        return "Nome: " + nome + "\nDescrição: " + descricao + "\nValor: " + valor + "\nCódigo: " + codigo;
+        return "Código: " + codigo  + "\nNome: " + nome + "\nDescrição: " + descricao + "\nValor: " + valor;
     }
 
     public int getCodigo() {

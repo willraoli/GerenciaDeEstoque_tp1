@@ -88,19 +88,19 @@ public class Main {
 
         System.out.println("[CADASTRO DE PRODUTO]");
 
-        System.out.print("Informe o nome do produto: ");
+        System.out.println("Informe o nome do produto: ");
         nomeProduto = teclado.nextLine();
 
-        System.out.print("Dê uma descrição para o produto: ");
+        System.out.println("Dê uma descrição para o produto: ");
         descricaoProduto = teclado.nextLine();
 
-        System.out.print("Informe o valor do produto: ");
+        System.out.println("Informe o valor do produto: ");
         valorProduto = teclado.nextDouble();
         teclado.nextLine();
 
         //Fazer uma pergunta antes
         System.out.println("Deseja cadastrar por Unidade ou Quilo");
-        System.out.print("[Unidade]/[Quilo]: ");
+        System.out.println("[Unidade]/[Quilo]: ");
         resp = teclado.nextLine();
 
         if (resp.equalsIgnoreCase("unidade")) {
@@ -143,7 +143,7 @@ public class Main {
         int codInfo;
         System.out.println("[CONSULTAR PRODUTO]");
         do {
-            System.out.print("Informe o código do produto que deseja consultar: ");
+            System.out.println("Informe o código do produto que deseja consultar: ");
             codInfo = teclado.nextInt();
             teclado.nextLine();
             if (produtos.getProduto(codInfo) != null) {
@@ -160,7 +160,7 @@ public class Main {
         double quantidade;
         System.out.println("[ALTERAR PRODUTO]");
         do {
-            System.out.print("Informe o código do produto que deseja consultar:");
+            System.out.println("Informe o código do produto que deseja consultar:");
             codigo = tc.nextInt();
             tc.nextLine();
             if (produtos.getProduto(codigo) != null) {
@@ -197,7 +197,7 @@ public class Main {
         int codProduto;
 
         System.out.println("[EXCLUIR PRODUTO]");
-        System.out.print("Informe o código do produto: ");
+        System.out.println("Informe o código do produto: ");
         codProduto = teclado.nextInt();
         teclado.nextLine();
 
@@ -223,13 +223,13 @@ public class Main {
 
         System.out.println("Código da nota fiscal: " + nf.getCodigo());
 
-        System.out.print("Qual a data da criação da nota fiscal (dd/MM/yyyy): ");
+        System.out.println("Qual a data da criação da nota fiscal (dd/MM/yyyy): ");
         data = teclado.nextLine();
         nf.setData(data);
 
 
         do {
-            System.out.print("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
+            System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
             codInfo = teclado.nextInt();
             teclado.nextLine();
 
@@ -240,7 +240,7 @@ public class Main {
             } while (produtos.getProduto(codInfo) == null);
            
             do {
-                System.out.print("Agora por favor, informe a quantidade vendida deste produto: ");
+                System.out.println("Agora por favor, informe a quantidade vendida deste produto: ");
                 quantidadeVendida = teclado.nextDouble();
                 teclado.nextLine();
 
@@ -265,7 +265,7 @@ public class Main {
     public void consultarNotaFiscal() {
         Scanner in = new Scanner(System.in);
 
-        System.out.print("Insira o código da nota fiscal a ser consultada: ");
+        System.out.println("Insira o código da nota fiscal a ser consultada: ");
         int resp = in.nextInt();
 
         System.out.println(notasFiscais.getNotaFiscal(resp).toString());
@@ -276,7 +276,7 @@ public class Main {
         int respInt, respProduto;
         NotaFiscal nf;
 
-        System.out.print("Insira o código da nota fiscal a ser alterada: ");
+        System.out.println("Insira o código da nota fiscal a ser alterada: ");
         respInt = in.nextInt();
 
         NotaFiscal notaAntiga = notasFiscais.getNotaFiscal(respInt); //pegar dados da nota fiscal antiga [GAMBIARRA]

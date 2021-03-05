@@ -35,7 +35,7 @@ class MainTest {
         notaFiscal1.addItem(item2);
 
         notaFiscal2 = notaFiscal1;
-        notaFiscal2.removeItem(item2);
+        notaFiscal2.removeItem(item1);
 
         notasFiscais.addNotaFiscal(notaFiscal1);
         notasFiscais.addNotaFiscal(notaFiscal2);
@@ -43,6 +43,6 @@ class MainTest {
 
     @Test
     void alterarNotaFiscal() {
-        assertEquals(notaFiscal1, notaFiscal2);
+        assertEquals(notaFiscal1.getRelacaoItens().size(), notaFiscal2.getRelacaoItens().size());
     }
 }

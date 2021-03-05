@@ -275,6 +275,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         int respInt, respProduto;
         NotaFiscal nf;
+        Item i;
 
         System.out.println("Insira o código da nota fiscal a ser alterada: ");
         respInt = in.nextInt();
@@ -293,13 +294,21 @@ public class Main {
             case 1:
                 System.out.println("Qual o código do produto que você deseja adicionar?");
                 respProduto = in.nextInt();
+
                 System.out.println("Será alterado:");
                 System.out.println(produtos.getProduto(respProduto).toString());
 
-                Item i = new Item(produtos.getProduto(respProduto), produtos.getProduto(respProduto).getQuantidade());
+                i = new Item(produtos.getProduto(respProduto), produtos.getProduto(respProduto).getQuantidade());
                 notasFiscais.addItem(respInt, i);
                 break;
             case 2:
+                System.out.println("Qual o código do produto que você deseja remover?");
+                respProduto = in.nextInt();
+
+                System.out.println("Será removido:");
+                System.out.println(produtos.getProduto(respProduto).toString());
+
+//                notasFiscais.removeItem(respProduto, );
                 break;
             default:
                 System.out.println("Selecione uma das opções.");

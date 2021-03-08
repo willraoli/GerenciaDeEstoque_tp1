@@ -18,12 +18,9 @@ public class ManipulaNotaFiscal implements INotasFiscais {
 
     @Override
     public boolean removeNotaFiscal(int codigo) {
-        if (notaF.size() > 0) {
-            for (NotaFiscal nota : notaF) {
-                if (nota.getCodigo() == codigo) {
-                    notaF.remove(nota);
-                    return true;
-                }
+        for (NotaFiscal nota : notaF) {
+            if (nota.getCodigo() == codigo) {
+                return notaF.remove(nota);
             }
         }
         return false;
@@ -52,11 +49,9 @@ public class ManipulaNotaFiscal implements INotasFiscais {
     @Override
     public NotaFiscal getNotaFiscal(int codigo) {
         NotaFiscal notaFISCAL = null;
-        if (notaF.size() > 0) {
-            for (NotaFiscal nota : notaF) {
-                if (nota.getCodigo() == codigo) {
-                    notaFISCAL = nota;
-                }
+        for (NotaFiscal nota : notaF) {
+            if (nota.getCodigo() == codigo) {
+                notaFISCAL = nota;
             }
         }
         return notaFISCAL;
@@ -65,11 +60,9 @@ public class ManipulaNotaFiscal implements INotasFiscais {
     @Override
     public double getTotal(int codigo) {
         double valorNota = 0;
-        if (notaF.size() > 0) {
-            for (NotaFiscal nota : notaF) {
-                if (nota.getCodigo() == codigo) {
-                    valorNota = nota.getValorTotal();
-                }
+        for (NotaFiscal nota : notaF) {
+            if (nota.getCodigo() == codigo) {
+                valorNota = nota.getValorTotal();
             }
         }
         return valorNota;
@@ -77,12 +70,9 @@ public class ManipulaNotaFiscal implements INotasFiscais {
 
     @Override
     public boolean addItem(int codigo, Item item) {
-        if (notaF.size() > 0) {
-            for (NotaFiscal nota : notaF) {
-                if (nota.getCodigo() == codigo) {
-                    nota.addItem(item);
-                    return true;
-                }
+        for (NotaFiscal nota : notaF) {
+            if (nota.getCodigo() == codigo) {
+                return nota.addItem(item);
             }
         }
         return false;
@@ -90,12 +80,9 @@ public class ManipulaNotaFiscal implements INotasFiscais {
 
     @Override
     public boolean removeItem(int codigo, Item item) {
-        if (notaF.size() > 0) {
-            for (NotaFiscal nota : notaF) {
-                if (nota.getCodigo() == codigo) {
-                    nota.removeItem(item);
-                    return true;
-                }
+        for (NotaFiscal nota : notaF) {
+            if (nota.getCodigo() == codigo) {
+                return nota.removeItem(item);
             }
         }
         return false;

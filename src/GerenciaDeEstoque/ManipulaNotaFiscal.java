@@ -29,7 +29,16 @@ public class ManipulaNotaFiscal implements INotasFiscais {
         return false;
     }
 
-    public double getValorTotalAllNotaFiscal() {
+    public double getValorTotalAllNotaFiscal(String date) {
+        double valorTotal = 0;
+        for (NotaFiscal n : notaF) {
+            if (n.getCodigo() != 0 && n.getData().equals(date)) {
+                valorTotal += n.getValorTotal();
+            }
+        }
+        return valorTotal;
+    }
+    /* public double getValorTotalAllNotaFiscal() {
         double valorTotal = 0;
         for (NotaFiscal n : notaF) {
             if (n.getCodigo() != 0) {
@@ -37,7 +46,8 @@ public class ManipulaNotaFiscal implements INotasFiscais {
             }
         }
         return valorTotal;
-    }
+     * 
+     */
 
     @Override
     public NotaFiscal getNotaFiscal(int codigo) {
@@ -90,5 +100,6 @@ public class ManipulaNotaFiscal implements INotasFiscais {
         }
         return false;
     }
+
 
 }

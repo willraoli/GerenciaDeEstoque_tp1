@@ -326,9 +326,15 @@ public class Main {
     }
 
     public void totalVendido() {
-        System.out.println("[TOTAL VENDIDO]");
-        System.out.println("O total vendido é de: R$ " + notasFiscais.getValorTotalAllNotaFiscal() + ".");
-    }
+		String data;
+		System.out.println("[TOTAL VENDIDO]");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite a data em que deseja consultar o total vendido: ");
+		data = sc.nextLine();
+
+		System.out.println("O total vendido é de: R$ " + notasFiscais.getValorTotalAllNotaFiscal(data) + ".");
+
+	}
 
     public static void main(String[] args) {
         Main mn = new Main();

@@ -20,7 +20,12 @@ public abstract class Produto {
         this.valor = 0;
         Produto.nCodigo++;
     }
-
+/**
+ * Na classe abstrata foi criado um construtor com os atributos em comum entre ProdQuilo e ProdUnidade, além de um contador para gerar códigos automaticamente para os produtos
+ * e garantindo que o número do código fosse um atributo identificador.
+ * 
+ * 
+ */
     public Produto(String nome, String descricao, double valor) {
         this.nome = nome;
         this.descricao = descricao;

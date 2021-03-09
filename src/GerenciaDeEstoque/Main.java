@@ -12,6 +12,7 @@ public class Main {
 	private ManipulaProduto produtos;
 	private ManipulaNotaFiscal notasFiscais;
 	private Scanner tc;
+	private int cont = 1;
 
 	public Main() {
 		produtos = new ManipulaProduto();
@@ -365,24 +366,48 @@ public class Main {
 		tc = new Scanner(System.in);
 		int codNotaF;
 		NotaFiscal nf;
+		Item i;
 
 		System.out.println("[EXCLUIR NOTA FISCAL]");
-		System.out.println("-------------------------");
-		System.out.println(notasFiscais.toString());
-		System.out.println("-------------------------");
-		System.out.println("Informe o código da nota fiscal: ");
+		/**
+		 * do { if(notasFiscais.getNotaFiscal(cont) != null) { nf =
+		 * notasFiscais.getNotaFiscal(cont); System.out.println(nf.toString()); cont++;
+		 * } }while(cont < nf.getTotalCodigo());
+		 **/
+		System.out.println(cont);
+
+		while (notasFiscais.getNotaFiscal(cont) != null) {
+			nf = notasFiscais.getNotaFiscal(cont);
+			System.out.println(nf.toString());
+			cont++;
+		}
+		cont--;
+		System.out.println("Insira o código da nota fiscal a ser removida: ");
 		codNotaF = tc.nextInt();
 		tc.nextLine();
 
-		if (notasFiscais.getNotaFiscal(codNotaF) != null) {
-			System.out.println(notasFiscais.getNotaFiscal(codNotaF).toString());
-			for(int pass = 0; nf.getRelacaoItens().size() > 0; pass++ ){
+		nf = notasFiscais.getNotaFiscal(codNotaF);
 
-	        }
-			
+		if (nf != null) {
+			System.out.println("-------------------------");
+			System.out.println(nf.toString());
+			System.out.println("-------------------------");
+		} else {
+			System.out.println("Código inválido");
+		}
+
+		if (nf != null) {
+			System.out.println(nf.toString());
+			for (int pass = 1; nf.getRelacaoItens().size() > 0; pass++) {
+				i = nf.getItem(pass);
+				nf.removeItem(i);
+			}
+
+			System.out.println("Nota Fiscal excluída.");
+			notasFiscais.removeNotaFiscal(codNotaF);
 
 		}
-		System.out.println("Nota Fiscal excluída.");
+
 	}
 
 	public static void main(String[] args) {

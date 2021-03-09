@@ -21,6 +21,9 @@ public class NotaFiscal {
        NotaFiscal.nrCodigo++;
        this.data = data;
    }
+   public NotaFiscal(){
+       this.codigo = 0;
+   }
    
    public Item getItem(int codigo) {
 	   for(Item i: relacaoItens) {
@@ -92,6 +95,4 @@ public class NotaFiscal {
         this.relacaoItens = relacaoItens;
     }
    
-   
- 
 }

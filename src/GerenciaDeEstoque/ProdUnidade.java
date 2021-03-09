@@ -32,7 +32,7 @@ public class ProdUnidade extends Produto {
     }
     
     public String toString(){
-        return super.toString() + "\nQuantidade: " + quantidade;
+        return super.toString() + "\nQuantidade: " + quantidade + "unidades.";
     }
     
     public double getQuantidade() {

@@ -39,16 +39,6 @@ public class ManipulaNotaFiscal implements INotasFiscais {
         }
         return valorTotal;
     }
-    /* public double getValorTotalAllNotaFiscal() {
-        double valorTotal = 0;
-        for (NotaFiscal n : notaF) {
-            if (n.getCodigo() != 0) {
-                valorTotal += n.getValorTotal();
-            }
-        }
-        return valorTotal;
-     * 
-     */
 
     @Override
     public NotaFiscal getNotaFiscal(int codigo) {

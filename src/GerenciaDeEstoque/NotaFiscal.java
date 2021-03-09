@@ -66,7 +66,7 @@ public class NotaFiscal {
 		for (Item i : relacaoItens) {
 			itens += i.toString() + "\n";
 		}
-		itens += "Total da nota: " + getValorTotal();
+		itens += "Total da nota: R$ " + getValorTotal();
 
 		return itens;
 	}

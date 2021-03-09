@@ -30,7 +30,7 @@ public class ProdQuilo extends Produto {
     }
 
     public String toString() {
-        return super.toString() + "\nQuantidade: " + quantidade;
+        return super.toString() + "\nQuantidade:  " + quantidade + "kg.";
 
     }
 

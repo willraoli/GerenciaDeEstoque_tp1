@@ -23,7 +23,7 @@ public class Item {
         return p.getValor() * quantidade;
     }
     public String toString(){
-        return "\n\tNome: " + p.getNome() + "\n\tQuantidade: " + quantidade + "\n\tPreço: " + p.getValor() + "\n\tTotal em R$: " + getValorTotal() + "\n";
+        return "\n\tNome: " + p.getNome() + "\n\tQuantidade: " + quantidade + "\n\tPreço: " + p.getValor() + "\n\tTotal em R$: " + String.format("%.2f", getValorTotal()) + "\n";
     }
 
     public Produto getP() {

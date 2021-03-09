@@ -32,6 +32,7 @@ public class Main {
 			System.out.println("6. Consultar nota fiscal");
 			System.out.println("7. Alterar nota fiscal");
 			System.out.println("8. Consultar total vendido");
+			System.out.println("9. Excluir Nota Fiscal");
 			System.out.println("0. Sair");
 			op = tc.nextInt();
 			tc.nextLine();
@@ -67,6 +68,10 @@ public class Main {
 
 			case 8:
 				totalVendido();
+				break;
+
+			case 9:
+				removerNotaFiscal();
 				break;
 
 			case 0:
@@ -286,10 +291,18 @@ public class Main {
 		int respInt, respProduto;
 		NotaFiscal nf;
 		Item i;
+		double quantidadeVendida;
+		do {
+			System.out.println("Insira o código da nota fiscal a ser alterada: ");
+			respInt = tc.nextInt();
+			nf = notasFiscais.getNotaFiscal(respInt);
 
-		System.out.println("Insira o código da nota fiscal a ser alterada: ");
-		respInt = tc.nextInt();
-		System.out.println(notasFiscais.getNotaFiscal(respInt).toString());
+			if (nf != null) {
+				System.out.println(nf.toString());
+			} else {
+				System.out.println("Código inválido");
+			}
+		} while (nf == null);
 
 		System.out.println("O que você deseja fazer?");
 		System.out.println("[1] Adicionar item");
@@ -300,23 +313,37 @@ public class Main {
 
 		switch (respSwitch) {
 		case 1:
-			System.out.println("Qual o código do produto que você deseja adicionar?");
-			respProduto = tc.nextInt();
+			do {
+				System.out.println("Qual o código do produto que você deseja adicionar?");
+				respProduto = tc.nextInt();
+				System.out.println("Informe a quantidade vendida do produto: ");
+				quantidadeVendida = tc.nextDouble();
+				if (produtos.getProduto(respProduto) != null) {
+					System.out.println("Será alterado:");
+					System.out.println(produtos.getProduto(respProduto).toString());
+				} else {
+					System.out.println("Código Inválido");
+				}
+			} while (produtos.getProduto(respProduto) == null);
 
-			System.out.println("Será alterado:");
-			System.out.println(produtos.getProduto(respProduto).toString());
-
-			i = new Item(produtos.getProduto(respProduto), produtos.getProduto(respProduto).getQuantidade());
+			i = new Item(produtos.getProduto(respProduto), quantidadeVendida);
 			notasFiscais.addItem(respInt, i);
 			break;
 		case 2:
-			System.out.println("Qual o código do produto que você deseja remover?");
-			respProduto = tc.nextInt();
+			do {
+				System.out.println("Qual o código do produto que você deseja remover?");
+				respProduto = tc.nextInt();
 
-			System.out.println("Será removido:");
-			System.out.println(produtos.getProduto(respProduto).toString());
-
-//                notasFiscais.removeItem(respProduto, );
+				System.out.println("Será removido:");
+				System.out.println(produtos.getProduto(respProduto).toString());
+				i = nf.getItem(respProduto);
+				if (i != null) {
+					nf.removeItem(i);
+					System.out.println("Item removido");
+				} else {
+					System.out.println("Código inválido");
+				}
+			} while (i == null);
 			break;
 		default:
 			System.out.println("Opção inválida.");
@@ -330,23 +357,32 @@ public class Main {
 		System.out.println("Digite a data em que deseja consultar o total vendido: ");
 		data = sc.nextLine();
 
-		System.out.println("O total vendido é de: R$ " + notasFiscais.getValorTotalAllNotaFiscal(data) + ".");
+		System.out.printf("O total vendido é de: R$ %.2f.", notasFiscais.getValorTotalAllNotaFiscal(data));
 
 	}
 
 	public void removerNotaFiscal() {
 		tc = new Scanner(System.in);
 		int codNotaF;
+		NotaFiscal nf;
 
 		System.out.println("[EXCLUIR NOTA FISCAL]");
+		System.out.println("-------------------------");
+		System.out.println(notasFiscais.toString());
+		System.out.println("-------------------------");
 		System.out.println("Informe o código da nota fiscal: ");
 		codNotaF = tc.nextInt();
 		tc.nextLine();
 
 		if (notasFiscais.getNotaFiscal(codNotaF) != null) {
 			System.out.println(notasFiscais.getNotaFiscal(codNotaF).toString());
-			produtos.removeProduto(codNotaF);
+			for(int pass = 0; nf.getRelacaoItens().size() > 0; pass++ ){
+
+	        }
+			
+
 		}
+		System.out.println("Nota Fiscal excluída.");
 	}
 
 	public static void main(String[] args) {

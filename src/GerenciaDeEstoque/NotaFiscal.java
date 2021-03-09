@@ -13,12 +13,22 @@ public class NotaFiscal {
    private double valorTotal;
    private ArrayList<Item> relacaoItens = new ArrayList<>();
    private static int nrCodigo = 0;
+   
 
    
    public NotaFiscal(String data){
        codigo = 1 + nrCodigo;
        NotaFiscal.nrCodigo++;
        this.data = data;
+   }
+   
+   public Item getItem(int codigo) {
+	   for(Item i: relacaoItens) {
+		   if(i.getP().getCodigo() == codigo) {
+			   return i;
+		   }
+	   }
+	   return null;
    }
    
    

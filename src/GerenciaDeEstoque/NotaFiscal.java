@@ -74,11 +74,6 @@ public class NotaFiscal {
         }
         return removeItem(listaParaRemover);
     }
-//        if (relacaoItens.size() > 0) {
-//            return false;
-//        } else {
-//            return true;
-//        }
 
 
     /**

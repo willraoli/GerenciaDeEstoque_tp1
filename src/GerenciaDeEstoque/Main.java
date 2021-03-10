@@ -25,6 +25,8 @@ public class Main {
         NotaFiscal notaFiscal2 = new NotaFiscal("10/03/2021");
         Item item1 = new Item(prodUnidadeA, 1);
         Item item2 = new Item(prodUnidadeB, 1);
+        Item item3 = new Item(prodQuiloA, 5.5);
+        Item item4 = new Item(prodQuiloB, 25.5);
         produtos = new ManipulaProduto();
         notasFiscais = new ManipulaNotaFiscal();
         produtos.addProduto(prodUnidadeA);
@@ -34,8 +36,8 @@ public class Main {
 
         notaFiscal1.addItem(item1);
         notaFiscal1.addItem(item2);
-
-        notaFiscal2 = notaFiscal1;
+        notaFiscal2.addItem(item3);
+        notaFiscal2.addItem(item4);
 
 
         notasFiscais.addNotaFiscal(notaFiscal1);
@@ -403,29 +405,6 @@ public class Main {
                 System.out.println("Código não existe!");
             }
         } while (notasFiscais.getNotaFiscal(codNotaF) == null);
-
-//        nf = notasFiscais.getNotaFiscal(codNotaF);
-//        tc.nextLine();
-
-
-//        if (nf != null) {
-//            System.out.println("-------------------------");
-//            System.out.println(nf.toString());
-//            System.out.println("-------------------------");
-//        } else {
-//            System.out.println("Código inválido");
-//        }
-//
-//        if (nf != null) {
-//            System.out.println(nf.toString());
-//            if (nf.removeTodosItens()) {
-//                System.out.println("Nota Fiscal excluída.");
-//                notasFiscais.removeNotaFiscal(codNotaF);
-//            } else {
-//                System.out.println("Erro");
-//            }
-//
-//        }
 
     }
 

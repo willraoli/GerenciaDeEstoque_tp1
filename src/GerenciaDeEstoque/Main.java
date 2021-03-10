@@ -358,7 +358,7 @@ public class Main {
     public void removerNotaFiscal() {
         tc = new Scanner(System.in);
         int codNotaF;
-        NotaFiscal nf;
+//        NotaFiscal nf;
 
         System.out.println("[EXCLUIR NOTA FISCAL]");
         System.out.println(notasFiscais.getAllNotaFiscalToString());
@@ -367,9 +367,11 @@ public class Main {
         codNotaF = tc.nextInt();
 
         if (notasFiscais.getNotaFiscal(codNotaF) != null) {
-            nf = notasFiscais.getNotaFiscal(codNotaF);
             notasFiscais.getNotaFiscal(codNotaF).removeTodosItens();
+            notasFiscais.removeNotaFiscal(codNotaF);
+            System.out.println("A nota fiscal " + codNotaF + " foi removida com sucesso.");
         }
+
 //        nf = notasFiscais.getNotaFiscal(codNotaF);
 //        tc.nextLine();
 

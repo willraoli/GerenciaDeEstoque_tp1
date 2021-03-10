@@ -36,7 +36,7 @@ public class ProdUnidade extends Produto {
         return false;
     }
     
-  /**
+  /**Método adiciona uma quantidade no produto
    * @param quantidade recebe a quantidade a ser adicionada no produto.
    * @return irá retornar um booleano true caso seja possível adicionar a quantidade desejada. 
    */
@@ -52,7 +52,9 @@ public class ProdUnidade extends Produto {
     public String toString(){
         return super.toString() + "\nQuantidade: " + quantidade + " unidades.";
     }
-    
+    /**Método de acesso ao atributo quantidade
+     * @return o valor da quantidade do produto
+     */
     public double getQuantidade() {
         return quantidade;
     }

@@ -112,34 +112,34 @@ public class Main {
         System.out.println("[Unidade]/[Quilo]: ");
         resp = tc.nextLine();
 
-            if (resp.equalsIgnoreCase("unidade")) {
-                do {
-                    try {
-                        System.out.println("Informe a quantidade do produto: ");
-                        quantidadeP = tc.nextInt();
-                        ok = true;
-                    } catch (Exception IO) {
-                        System.out.println("Informe, por favor, um inteiro!");
-                        ok = false;
-                    } finally {
-                        tc.nextLine();
-                    }
-                } while (!ok);
+        if (resp.equalsIgnoreCase("unidade")) {
+            do {
+                try {
+                    System.out.println("Informe a quantidade do produto: ");
+                    quantidadeP = tc.nextInt();
+                    ok = true;
+                } catch (Exception IO) {
+                    System.out.println("Informe, por favor, um inteiro!");
+                    ok = false;
+                } finally {
+                    tc.nextLine();
+                }
+            } while (!ok);
 
 
-                Produto pUnidade = new ProdUnidade(nomeProduto, descricaoProduto, valorProduto, quantidadeP);
-                System.out.println(pUnidade.toString());
-                produtos.addProduto(pUnidade);
+            Produto pUnidade = new ProdUnidade(nomeProduto, descricaoProduto, valorProduto, quantidadeP);
+            System.out.println(pUnidade.toString());
+            produtos.addProduto(pUnidade);
 
-            } else if (resp.equalsIgnoreCase("Quilo")) {
-                System.out.println("Informe a quantidade do produto:");
-                quantidadeQuilo = tc.nextDouble();
-                tc.nextLine();
+        } else if (resp.equalsIgnoreCase("Quilo")) {
+            System.out.println("Informe a quantidade do produto:");
+            quantidadeQuilo = tc.nextDouble();
+            tc.nextLine();
 
-                Produto pQuilo = new ProdQuilo(nomeProduto, descricaoProduto, valorProduto, quantidadeQuilo);
-                System.out.println(pQuilo.toString());
-                produtos.addProduto(pQuilo);
-            }
+            Produto pQuilo = new ProdQuilo(nomeProduto, descricaoProduto, valorProduto, quantidadeQuilo);
+            System.out.println(pQuilo.toString());
+            produtos.addProduto(pQuilo);
+        }
     }
 
     public void consultarProduto() {
@@ -235,11 +235,12 @@ public class Main {
         nf.setData(data);
 
         do {
-            System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
-            codInfo = tc.nextInt();
-            tc.nextLine();
-
             do {
+                System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
+                codInfo = tc.nextInt();
+                tc.nextLine();
+
+
                 if (produtos.getProduto(codInfo) != null) {
                     System.out.println(produtos.getProduto(codInfo).toString());
                 }

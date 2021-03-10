@@ -234,13 +234,23 @@ public class Main {
         data = tc.nextLine();
         nf.setData(data);
 
+        System.out.println(produtos.listaProdString());
+        
         do {
             do {
+<<<<<<< Updated upstream
                 System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
                 codInfo = tc.nextInt();
                 tc.nextLine();
 
 
+=======
+            System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
+            codInfo = tc.nextInt();
+            tc.nextLine();
+
+            
+>>>>>>> Stashed changes
                 if (produtos.getProduto(codInfo) != null) {
                     System.out.println(produtos.getProduto(codInfo).toString());
                 }
@@ -363,7 +373,8 @@ public class Main {
 
         System.out.println("[EXCLUIR NOTA FISCAL]");
         System.out.println(notasFiscais.getAllNotaFiscalToString());
-
+        
+        do{
         System.out.println("Insira o código da nota fiscal a ser removida: ");
         codNotaF = tc.nextInt();
 
@@ -371,7 +382,11 @@ public class Main {
             notasFiscais.getNotaFiscal(codNotaF).removeTodosItens();
             notasFiscais.removeNotaFiscal(codNotaF);
             System.out.println("A nota fiscal " + codNotaF + " foi removida com sucesso.");
+            break;
+        }else{
+            System.out.println("Código não existe!");
         }
+        }while(notasFiscais.getNotaFiscal(codNotaF) == null);
 
 //        nf = notasFiscais.getNotaFiscal(codNotaF);
 //        tc.nextLine();

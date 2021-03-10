@@ -54,7 +54,7 @@ public abstract class Produto {
      * 
      */
     public String toString() {
-        return "Código: " + codigo  + "\nNome: " + nome + "\nDescrição: " + descricao + "\nValor: R$ " + String.format("%.2f",valor) + ".";
+        return "Código: " + codigo  + "\nNome: " + nome + "\nDescrição: " + descricao + "\nValor: R$ " + String.format("%.2f",valor) + ".\n";
     	//return "Código: %d Nome: %s Descrição: %s Valor R$ %.2f.", codigo, nome, descricao, valor;  
     }
     

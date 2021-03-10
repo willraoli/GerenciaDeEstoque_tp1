@@ -128,9 +128,9 @@ public class Main {
 				}
 			} while (!ok);
 
-			quantidadeProduto = quantidadeP;
+			//quantidadeProduto = quantidadeP;
 
-			Produto pUnidade = new ProdUnidade(nomeProduto, descricaoProduto, valorProduto, quantidadeProduto);
+			Produto pUnidade = new ProdUnidade(nomeProduto, descricaoProduto, valorProduto, quantidadeP);
 			System.out.println(pUnidade.toString());
 			produtos.addProduto(pUnidade);
 
@@ -329,6 +329,7 @@ public class Main {
 
 			i = new Item(produtos.getProduto(respProduto), quantidadeVendida);
 			notasFiscais.addItem(respInt, i);
+			System.out.println(i);
 			break;
 		case 2:
 			do {

@@ -13,8 +13,9 @@ public abstract class Produto {
     protected double valor;
     protected static int nCodigo = 0;
 /**
- * Primeiro foi criado um construtor apenas com o parâmetro de nome, pois seria o único atributo necessário para a criação de produto.
  * 
+ * @param nome refere-se ao nome do produto
+ * Um construtor Produto com o atributo mínimo para ser gerado, que no caso é o nome.
  */
     public Produto(String nome) {
         codigo = 1 + nCodigo;
@@ -24,17 +25,13 @@ public abstract class Produto {
         Produto.nCodigo++;
     }
  
-/**
- * Na classe abstrata foi criado a sobrecarga um construtor com os atributos em comum entre ProdQuilo e ProdUnidade, além de um contador para gerar códigos automaticamente para os produtos
- * e garantindo que o número do código fosse um atributo identificador.
- * 
- * 
- */
+
     /**
-     * 
+     * Uma sobrecarga do construtor Produto
      * @param nome refere-se ao nome do produto
      * @param descricao refere-se à descrição do produto
      * @param valor refere-se ao preço do produto
+     * 
      */
     public Produto(String nome, String descricao, double valor) {
         this.nome = nome;

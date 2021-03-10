@@ -8,7 +8,13 @@ package GerenciaDeEstoque;
 public class ProdQuilo extends Produto {
 
     private double quantidade;
-
+/**
+ * 
+ * @param nome refere-se ao nome do Produto
+ * @param descricao refere-se à descrição do produto
+ * @param valor refere-se ao preço do produto
+ * @param quantidade refere-se à quantidade do produto
+ */
     public ProdQuilo(String nome, String descricao, double valor, double quantidade) {
         super(nome, descricao, valor);
         this.quantidade = quantidade;
@@ -30,7 +36,7 @@ public class ProdQuilo extends Produto {
     }
 
     public String toString() {
-        return super.toString() + "\nQuantidade:  " + quantidade + "kg.";
+        return super.toString() + "\nQuantidade:  " + quantidade + " kg.";
 
     }
 

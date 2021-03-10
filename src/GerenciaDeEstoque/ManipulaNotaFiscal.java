@@ -25,11 +25,13 @@ public class ManipulaNotaFiscal implements INotasFiscais {
         }
         return false;
     }
-    /*Este método têm como parâmetro um atributo String date, dentro de um laço for each para as notas fiscasis contém um if para verificar se o código e data conferem. Para então
-     * o atributo valorTotal receber a soma de todas as notas. 
-     * 
-     */
-
+  
+/**
+ * O método deve receber uma data como parâmetro e  irá percorrer a arrayList de notas fiscais verificando se elas possuem a mesma
+ *  data e checando também o código
+ * @param date corresponde a data
+ * @return após uma atribuição cumulativa, ele irá retornar o valor de totas as notas
+ */
     public double getValorTotalAllNotaFiscal(String date) {
         double valorTotal = 0;
         for (NotaFiscal n : notaF) {
@@ -61,7 +63,10 @@ public class ManipulaNotaFiscal implements INotasFiscais {
         }
         return valorNota;
     }
-
+    /**
+     * @param codigo corresponde ao código de um produto
+     * @param 
+     */
     @Override
     public boolean addItem(int codigo, Item item) {
         for (NotaFiscal nota : notaF) {

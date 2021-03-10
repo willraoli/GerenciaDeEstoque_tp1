@@ -5,17 +5,24 @@
  */
 package GerenciaDeEstoque;
 
-
-
 public class ProdUnidade extends Produto {
 
     private int quantidade;
     
+    /**
+     * 
+     * @param nome recebe o nome produto
+     * @param descricao
+     * @param valor
+     * @param quantidade
+     */
     public ProdUnidade(String nome, String descricao, double valor, int quantidade) {
         super(nome, descricao, valor);
         this.quantidade = quantidade;
     }
 
+    
+    
     public boolean subQuantidade(double quantidade) {
         
         if (this.quantidade >= quantidade) {
@@ -25,6 +32,7 @@ public class ProdUnidade extends Produto {
         return false;
     }
     
+  
     public boolean addQuantidade(double quantidade) {
         this.quantidade += quantidade;
         return true;
@@ -32,7 +40,7 @@ public class ProdUnidade extends Produto {
     }
     
     public String toString(){
-        return super.toString() + "\nQuantidade: " + quantidade + "unidades.";
+        return super.toString() + "\nQuantidade: " + quantidade + " unidades.";
     }
     
     public double getQuantidade() {

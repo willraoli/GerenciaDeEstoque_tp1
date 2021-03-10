@@ -12,8 +12,8 @@ public abstract class Produto {
     protected String descricao;
     protected double valor;
     protected static int nCodigo = 0;
+
 /**
- * 
  * @param nome refere-se ao nome do produto
  * Um construtor Produto com o atributo mínimo para ser gerado, que no caso é o nome.
  */
@@ -31,7 +31,6 @@ public abstract class Produto {
      * @param nome refere-se ao nome do produto
      * @param descricao refere-se à descrição do produto
      * @param valor refere-se ao preço do produto
-     * 
      */
     public Produto(String nome, String descricao, double valor) {
         this.nome = nome;

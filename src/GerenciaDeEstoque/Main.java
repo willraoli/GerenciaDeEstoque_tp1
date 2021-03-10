@@ -91,8 +91,7 @@ public class Main {
 		String nomeProduto;
 		String descricaoProduto;
 		double valorProduto;
-		int quantidadeProduto;
-		double quantidadeQuilo;
+        double quantidadeQuilo;
 		int quantidadeP = 0;
 		String resp;
 		boolean ok;
@@ -280,13 +279,7 @@ public class Main {
 		System.out.println(notasFiscais.getNotaFiscal(resp).toString());
 	}
 
-	/**
-	 * + Terminar @case 2(notasFiscais.removeItem).
-	 * <p>
-	 * + Adicionar alterar quantidade.
-	 * <p>
-	 * + Melhorar flow dos menus (código deve ser pedido antes do @switch).
-	 */
+
 	public void alterarNotaFiscal() {
 		tc = new Scanner(System.in);
 		int respInt, respProduto;

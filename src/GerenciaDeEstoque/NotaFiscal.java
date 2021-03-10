@@ -14,6 +14,10 @@ public class NotaFiscal {
 	private ArrayList<Item> relacaoItens = new ArrayList<>();
 	private static int nrCodigo = 0;
 
+    /**
+     * Gera um construtor para NotaFiscal
+     * @param data corresponde à data
+     */
 	public NotaFiscal(String data) {
 		codigo = 1 + nrCodigo;
 		NotaFiscal.nrCodigo++;
@@ -24,6 +28,11 @@ public class NotaFiscal {
 		this.codigo = 0;
 	}
 
+    /**
+     * Retorna o Item de acordo com o código inserido
+     * @param codigo Código do produto
+     * @return Item i se positivo ou null caso o item não exista
+     */
 	public Item getItem(int codigo) {
 		for (Item i : relacaoItens) {
 			if (i.getP().getCodigo() == codigo) {
@@ -33,6 +42,11 @@ public class NotaFiscal {
 		return null;
 	}
 
+    /**
+     *
+     * @param i Item a ser adicionado
+     * @return true se a operação teve êxito
+     */
 	public boolean addItem(Item i) {
 		if (i.getP().subQuantidade(i.getQuantidade())) {
 			relacaoItens.add(i);

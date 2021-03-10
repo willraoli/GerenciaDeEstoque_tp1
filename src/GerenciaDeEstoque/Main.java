@@ -106,12 +106,11 @@ public class Main {
 
         System.out.println("Informe o valor do produto: ");
         valorProduto = tc.nextDouble();
+        tc.nextLine();
 
-        do {
-            System.out.println("Deseja cadastrar por Unidade ou Quilo");
-            System.out.println("[Unidade]/[Quilo]: ");
-            resp = tc.nextLine();
-        } while (!(resp.equalsIgnoreCase("unidade") || resp.equalsIgnoreCase("quilo")));
+        System.out.println("Deseja cadastrar por Unidade ou Quilo");
+        System.out.println("[Unidade]/[Quilo]: ");
+        resp = tc.nextLine();
 
             if (resp.equalsIgnoreCase("unidade")) {
                 do {

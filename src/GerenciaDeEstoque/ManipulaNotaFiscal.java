@@ -52,6 +52,16 @@ public class ManipulaNotaFiscal implements INotasFiscais {
         return valorTotal;
     }
 
+    public String getAllNotaFiscalToString(){
+        String s = "";
+        for (NotaFiscal n : notaF) {
+            if(n.getCodigo() != 0) {
+                s += n.toString() + "\n";
+            }
+        }
+        return s;
+    }
+
     /**
      * Recebe a nota fiscal de acordo com o código inserido
      * @param codigo Código da nota fiscal a ser capturada.

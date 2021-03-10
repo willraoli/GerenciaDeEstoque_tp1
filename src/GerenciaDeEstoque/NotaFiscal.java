@@ -68,15 +68,18 @@ public class NotaFiscal {
      * @return true caso relacaoItens tenha tamanho <= 0, falso caso tenha tamanho > 0
      */
     public boolean removeTodosItens() {
+        Item listaParaRemover = null;
         for (Item i : relacaoItens) {
-            removeItem(i);
+            listaParaRemover = i;
         }
-        if (relacaoItens.size() > 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return removeItem(listaParaRemover);
     }
+//        if (relacaoItens.size() > 0) {
+//            return false;
+//        } else {
+//            return true;
+//        }
+
 
     /**
      * @return Retorna uma string contendo código, data, itens e valor total da nota fiscal

@@ -108,7 +108,6 @@ public class Main {
 		valorProduto = tc.nextDouble();
 		tc.nextLine();
 
-		// Fazer uma pergunta antes
 		System.out.println("Deseja cadastrar por Unidade ou Quilo");
 		System.out.println("[Unidade]/[Quilo]: ");
 		resp = tc.nextLine();
@@ -142,9 +141,6 @@ public class Main {
 			System.out.println(pQuilo.toString());
 			produtos.addProduto(pQuilo);
 		}
-
-		// Fazer alguma pergunta em relação a ser por unidade ou por quilo?
-		// Para poder determinar qual eu adiciono?
 	}
 
 	public void consultarProduto() {
@@ -347,10 +343,10 @@ public class Main {
 
 	public void totalVendido() {
 		String data;
+		tc = new Scanner(System.in);
 		System.out.println("[TOTAL VENDIDO]");
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Digite a data em que deseja consultar o total vendido: ");
-		data = sc.nextLine();
+		data = tc.nextLine();
 
 		System.out.printf("O total vendido é de: R$ %.2f.", notasFiscais.getValorTotalAllNotaFiscal(data));
 

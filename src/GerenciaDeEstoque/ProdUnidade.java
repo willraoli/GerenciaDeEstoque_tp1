@@ -16,7 +16,6 @@ public class ProdUnidade extends Produto {
      * @param valor
      * @param quantidade
      */
-    
     public ProdUnidade(String nome, String descricao, double valor, int quantidade) {
         super(nome, descricao, valor);
         this.quantidade = quantidade;

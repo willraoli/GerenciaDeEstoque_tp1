@@ -235,22 +235,15 @@ public class Main {
         nf.setData(data);
 
         System.out.println(produtos.listaProdString());
-        
+
         do {
             do {
-<<<<<<< Updated upstream
                 System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
                 codInfo = tc.nextInt();
                 tc.nextLine();
-
-
-=======
-            System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
-            codInfo = tc.nextInt();
-            tc.nextLine();
-
-            
->>>>>>> Stashed changes
+                System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
+                codInfo = tc.nextInt();
+                tc.nextLine();
                 if (produtos.getProduto(codInfo) != null) {
                     System.out.println(produtos.getProduto(codInfo).toString());
                 }
@@ -369,24 +362,23 @@ public class Main {
     public void removerNotaFiscal() {
         tc = new Scanner(System.in);
         int codNotaF;
-//        NotaFiscal nf;
 
         System.out.println("[EXCLUIR NOTA FISCAL]");
         System.out.println(notasFiscais.getAllNotaFiscalToString());
-        
-        do{
-        System.out.println("Insira o código da nota fiscal a ser removida: ");
-        codNotaF = tc.nextInt();
 
-        if (notasFiscais.getNotaFiscal(codNotaF) != null) {
-            notasFiscais.getNotaFiscal(codNotaF).removeTodosItens();
-            notasFiscais.removeNotaFiscal(codNotaF);
-            System.out.println("A nota fiscal " + codNotaF + " foi removida com sucesso.");
-            break;
-        }else{
-            System.out.println("Código não existe!");
-        }
-        }while(notasFiscais.getNotaFiscal(codNotaF) == null);
+        do {
+            System.out.println("Insira o código da nota fiscal a ser removida: ");
+            codNotaF = tc.nextInt();
+
+            if (notasFiscais.getNotaFiscal(codNotaF) != null) {
+                notasFiscais.getNotaFiscal(codNotaF).removeTodosItens();
+                notasFiscais.removeNotaFiscal(codNotaF);
+                System.out.println("A nota fiscal " + codNotaF + " foi removida com sucesso.");
+                break;
+            } else {
+                System.out.println("Código não existe!");
+            }
+        } while (notasFiscais.getNotaFiscal(codNotaF) == null);
 
 //        nf = notasFiscais.getNotaFiscal(codNotaF);
 //        tc.nextLine();

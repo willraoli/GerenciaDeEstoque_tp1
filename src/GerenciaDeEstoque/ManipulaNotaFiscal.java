@@ -63,10 +63,7 @@ public class ManipulaNotaFiscal implements INotasFiscais {
         }
         return valorNota;
     }
-    /**
-     * @param codigo corresponde ao código de um produto
-     * @param 
-     */
+    
     @Override
     public boolean addItem(int codigo, Item item) {
         for (NotaFiscal nota : notaF) {

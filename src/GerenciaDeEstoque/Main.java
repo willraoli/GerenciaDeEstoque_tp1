@@ -162,7 +162,9 @@ public class Main {
         String descricao, nome;
         double valor;
         double quantidade;
+
         System.out.println("[ALTERAR PRODUTO]");
+        System.out.println(produtos.listaProdString());
 
         do {
             System.out.println("Informe o código do produto que deseja consultar:");
@@ -177,11 +179,11 @@ public class Main {
                 System.out.println("Qual será a nova descrição?");
                 descricao = tc.nextLine();
 
-                System.out.println("Qual o valor a ser alterado?");
+                System.out.println("Qual será o novo valor?");
                 valor = tc.nextDouble();
                 tc.nextLine();
 
-                System.out.println("Qual a quantidade a ser alterada?");
+                System.out.println("Qual será a nova quantidade?");
                 quantidade = tc.nextDouble();
                 tc.nextLine();
 
@@ -202,7 +204,8 @@ public class Main {
         int codProduto;
 
         System.out.println("[EXCLUIR PRODUTO]");
-        System.out.println("Informe o código do produto: ");
+        System.out.println(produtos.listaProdString());
+        System.out.println("Informe o código do produto a ser excluído: ");
         codProduto = tc.nextInt();
         tc.nextLine();
 
@@ -302,6 +305,7 @@ public class Main {
         switch (respSwitch) {
             case 1:
                 do {
+                    System.out.println(produtos.listaProdString());
                     System.out.println("Qual o código do produto que você deseja adicionar?");
                     respProduto = tc.nextInt();
                     System.out.println("Informe a quantidade vendida do produto: ");
@@ -320,6 +324,7 @@ public class Main {
                 break;
             case 2:
                 do {
+                    System.out.println(produtos.listaProdString());
                     System.out.println("Qual o código do produto que você deseja remover?");
                     respProduto = tc.nextInt();
 

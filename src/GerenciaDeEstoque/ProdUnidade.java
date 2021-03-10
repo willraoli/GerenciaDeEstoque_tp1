@@ -50,7 +50,7 @@ public class ProdUnidade extends Produto {
      * @return uma string com os atributos do método toString() da superclasse, juntamente com a informação de quandidade do produto. 
      */
     public String toString(){
-        return super.toString() + "\nQuantidade: " + quantidade + " unidades.";
+        return super.toString() + "\nQuantidade: " + quantidade + " unidades.\n";
     }
     /**Método de acesso ao atributo quantidade
      * @return o valor da quantidade do produto

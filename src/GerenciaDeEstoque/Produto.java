@@ -13,18 +13,6 @@ public abstract class Produto {
     protected double valor;
     protected static int nCodigo = 0;
 
-/**
- * @param nome refere-se ao nome do produto
- * Um construtor Produto com o atributo mínimo para ser gerado, que no caso é o nome.
- */
-    public Produto(String nome) {
-        codigo = 1 + nCodigo;
-        this.nome = nome;
-        this.descricao = "";
-        this.valor = 0;
-        Produto.nCodigo++;
-    }
- 
 
     /**
      * Uma sobrecarga do construtor Produto

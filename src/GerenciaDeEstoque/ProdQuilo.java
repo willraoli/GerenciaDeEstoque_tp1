@@ -47,7 +47,7 @@ public class ProdQuilo extends Produto {
      * @return uma String contendo o toString() da superclasse + o valor da quantidade em kg
      */
     public String toString() {
-        return super.toString() + "\nQuantidade:  " + quantidade + " kg.";
+        return super.toString() + "\nQuantidade:  " + quantidade + " kg.\n";
 
     }
 

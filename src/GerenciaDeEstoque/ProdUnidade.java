@@ -10,7 +10,7 @@ public class ProdUnidade extends Produto {
     private int quantidade;
     
     /**
-     * 
+     * Cria um construtor de produto por unidade
      * @param nome recebe o nome produto
      * @param descricao
      * @param valor
@@ -24,6 +24,7 @@ public class ProdUnidade extends Produto {
 
     
     /**
+     * Método subtrai a quantidade de um produto
      * @param quantidade recebe a quantidade a ser subtraída de um produto.
      * @param return retorna um valor booleano true caso após a verificação seja possível subtrair a quantidade de produto desejada e irá
      *  retornar false caso não seja possível subtrair a quantidade de produto desejada.
@@ -47,6 +48,7 @@ public class ProdUnidade extends Produto {
 
     }
     /**
+     * O método cria uma toString com informações do produto
      * @return uma string com os atributos do método toString() da superclasse, juntamente com a informação de quandidade do produto. 
      */
     public String toString(){

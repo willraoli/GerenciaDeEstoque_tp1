@@ -59,7 +59,7 @@ public abstract class Produto {
      * @return retorna uma string com código, nome, descrição e preço
      */
     public String toString() {
-        return "Código: " + codigo + "\nNome: " + nome + "\nDescrição: " + descricao + "\nPreço: R$ " + String.format("%.2f", valor) + ".\n";
+        return "Código: " + codigo + "\nNome: " + nome + "\nDescrição: " + descricao + "\nPreço: R$ " + String.format("%.2f", valor) + ".";
     }
 
     /**

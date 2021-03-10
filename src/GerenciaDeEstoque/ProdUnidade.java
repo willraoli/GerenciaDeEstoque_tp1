@@ -12,9 +12,9 @@ public class ProdUnidade extends Produto {
     /**
      * Cria um construtor de produto por unidade
      * @param nome recebe o nome produto
-     * @param descricao
-     * @param valor
-     * @param quantidade
+     * @param descricao recebe a descrição do produto
+     * @param valor recebe o preço do produto
+     * @param quantidade recebe a quantidade do produto
      */
     public ProdUnidade(String nome, String descricao, double valor, int quantidade) {
         super(nome, descricao, valor);
@@ -59,11 +59,12 @@ public class ProdUnidade extends Produto {
         return quantidade;
     }
 
-    @Override
+
     /**
      * O método define um valor de quantidade para o produto
-     * @param q recebe um valor de quantidade para definir uma quantidade para o produto 
+     * @param q recebe um valor de quantidade para definir uma quantidade para o produto
      */
+    @Override
     public void setQuantidade(double q) {
         int quantidadeInt;
         quantidadeInt = (int) q;

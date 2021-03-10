@@ -17,29 +17,18 @@ public class Main {
         produtos = new ManipulaProduto();
         notasFiscais = new ManipulaNotaFiscal();
 
-        final ProdQuilo prodQuiloA = new ProdQuilo("Carne", "Bovina", 25, 50);
-        final ProdQuilo prodQuiloB = new ProdQuilo("Arroz", "Integral", 10, 5);
+        ProdQuilo prodQuiloA = new ProdQuilo("Carne", "Bovina", 25, 50);
+        ProdQuilo prodQuiloB = new ProdQuilo("Arroz", "Integral", 10, 5);
         ProdUnidade prodUnidadeA = new ProdUnidade("Smart TV", "50 polegadas", 1500, 10);
-        final ProdUnidade prodUnidadeB = new ProdUnidade("Ventilador", "Gira muito", 100, 1);
+        ProdUnidade prodUnidadeB = new ProdUnidade("Ventilador", "Gira muito", 100, 1);
         NotaFiscal notaFiscal1 = new NotaFiscal("01/06/2001");
         NotaFiscal notaFiscal2 = new NotaFiscal("10/03/2021");
-        Item item1 = new Item(prodUnidadeA, 1);
-        Item item2 = new Item(prodUnidadeB, 1);
-        Item item3 = new Item(prodQuiloA, 5.5);
-        Item item4 = new Item(prodQuiloB, 25.5);
         produtos = new ManipulaProduto();
         notasFiscais = new ManipulaNotaFiscal();
-        produtos.addProduto(prodUnidadeA);
-        produtos.addProduto(prodUnidadeB);
         produtos.addProduto(prodQuiloA);
         produtos.addProduto(prodQuiloB);
-
-        notaFiscal1.addItem(item1);
-        notaFiscal1.addItem(item2);
-        notaFiscal2.addItem(item3);
-        notaFiscal2.addItem(item4);
-
-
+        produtos.addProduto(prodUnidadeA);
+        produtos.addProduto(prodUnidadeB);
         notasFiscais.addNotaFiscal(notaFiscal1);
         notasFiscais.addNotaFiscal(notaFiscal2);
     }
@@ -267,9 +256,6 @@ public class Main {
                 System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
                 codInfo = tc.nextInt();
                 tc.nextLine();
-                System.out.println("Informe o código do produto que você deseja cadastrar na nota fiscal: ");
-                codInfo = tc.nextInt();
-                tc.nextLine();
                 if (produtos.getProduto(codInfo) != null) {
                     System.out.println(produtos.getProduto(codInfo).toString());
                 }
@@ -381,7 +367,7 @@ public class Main {
         System.out.println("Digite a data em que deseja consultar o total vendido: ");
         data = tc.nextLine();
 
-        System.out.printf("O total vendido é de: R$ %.2f.", notasFiscais.getValorTotalAllNotaFiscal(data) + "\n");
+        System.out.printf("O total vendido é de: R$ %.2f." + "\n", notasFiscais.getValorTotalAllNotaFiscal(data));
 
     }
 

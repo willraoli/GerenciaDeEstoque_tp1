@@ -126,9 +126,9 @@ public class ManipulaProduto implements IProdutos {
      * @return retorna uma String com a lista de produtos ou "" caso esteja vazia
      */
     public String listaProdString() {
-        String s = "";
+        String s = "\n";
         for (Produto p : listaProd){
-            s += p.toString();
+            s += p.toString() + "\n";
         }
         return s;
     }

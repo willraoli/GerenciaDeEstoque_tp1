@@ -26,11 +26,10 @@ public class ProdUnidade extends Produto {
     /**
      * Método subtrai a quantidade de um produto
      * @param quantidade recebe a quantidade a ser subtraída de um produto.
-     * @param return retorna um valor booleano true caso após a verificação seja possível subtrair a quantidade de produto desejada e irá
+     * @return retorna um valor booleano true caso após a verificação seja possível subtrair a quantidade de produto desejada e irá
      *  retornar false caso não seja possível subtrair a quantidade de produto desejada.
      */
     public boolean subQuantidade(double quantidade) {
-        
         if (this.quantidade >= quantidade) {
             this.quantidade -= quantidade;
             return true;

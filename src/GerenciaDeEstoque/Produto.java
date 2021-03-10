@@ -32,9 +32,9 @@ public abstract class Produto {
  */
     /**
      * 
-     * @param nome
-     * @param descricao
-     * @param valor
+     * @param nome refere-se ao nome do produto
+     * @param descricao refere-se à descrição do produto
+     * @param valor refere-se ao preço do produto
      */
     public Produto(String nome, String descricao, double valor) {
         this.nome = nome;
@@ -43,10 +43,7 @@ public abstract class Produto {
         codigo = 1 + nCodigo;
         Produto.nCodigo++;
     }
-/**Os métodos
- * 
- * 
- */
+
     public abstract void setQuantidade(double q);
 
     public abstract double getQuantidade();
@@ -56,7 +53,6 @@ public abstract class Produto {
     public abstract boolean addQuantidade(double quantidade);
         
     
-
     public String toString() {
         return "Código: " + codigo  + "\nNome: " + nome + "\nDescrição: " + descricao + "\nValor: R$ " + String.format("%.2f",valor) + ".";
     	//return "Código: %d Nome: %s Descrição: %s Valor R$ %.2f.", codigo, nome, descricao, valor;  

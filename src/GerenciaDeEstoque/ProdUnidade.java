@@ -42,7 +42,7 @@ public class ProdUnidade extends Produto {
     @Override
     public void setQuantidade(double q) {
         int quantidadeInt;
-        quantidadeInt = (int)q;
+        quantidadeInt = (int) q;
         this.quantidade = quantidadeInt;
     }
 

@@ -12,11 +12,21 @@ public class ManipulaProduto implements IProdutos {
 
     private ArrayList<Produto> listaProd = new ArrayList<>();
 
+    /**
+     * adiciona um produto p à listaProd
+     * @param p Produto
+     * @return true se conseguiu adicionar o produto
+     */
     @Override
     public boolean addProduto(Produto p) {
         return listaProd.add(p);
     }
 
+    /**
+     * remove um produto de código x da listaProd
+     * @param codigo Código do produto a ser removido.
+     * @return true se conseguiu remover o produto
+     */
     @Override
     public boolean removeProduto(int codigo) {
         Produto removProduto = null;
@@ -28,22 +38,11 @@ public class ManipulaProduto implements IProdutos {
         return listaProd.remove(removProduto);
     }
 
-//    @Override
-//    public boolean removeProduto(int codigo) {
-//        boolean ok = false;
-//        Produto removProduto = null;
-//        if (listaProd.size() > 0) {
-//            for (Produto prod : listaProd) {
-//                if (prod.getCodigo() == codigo) {
-//                    removProduto = prod;
-//                }
-//            }
-//            listaProd.remove(removProduto);
-//            ok = true;
-//        }
-//        return ok;
-//    }
-
+    /**
+     * Recebe o produto de código x
+     * @param codigo Código do produto a ser capturado.
+     * @return Produto prod se o produto existe ou null caso não exista
+     */
     @Override
     public Produto getProduto(int codigo) {
         for (Produto prod : listaProd) {
@@ -54,6 +53,12 @@ public class ManipulaProduto implements IProdutos {
         return null;
     }
 
+    /**
+     * Atualiza a quantidade do produto
+     * @param codigo Código do produto a ser alterado.
+     * @param nova Nova quantidade do produto.
+     * @return true se conseguiu atualizar a quantidade, falso caso não conseguiu
+     */
     @Override
     public boolean updateQuantidade(int codigo, double nova) {
         for (Produto prod : listaProd) {
@@ -65,6 +70,12 @@ public class ManipulaProduto implements IProdutos {
         return false;
     }
 
+    /**
+     * Atualiza o preço do produto
+     * @param codigo Código do produto a ser alterado.
+     * @param novo Novo preço do produto.
+     * @return true se conseguiu atualizar, false caso não conseguiu
+     */
     @Override
     public boolean updatePreco(int codigo, double novo) {
         for (Produto prod : listaProd) {
@@ -76,6 +87,12 @@ public class ManipulaProduto implements IProdutos {
         return false;
     }
 
+    /**
+     * Adiciona uma certa quantidade ao produto
+     * @param codigo Código do produto a ser alterado.
+     * @param quantidade Quantidade a ser acrescentada.
+     * @return true se conseguiu adicionar, false caso não conseguiu
+     */
     @Override
     public boolean addQuantidade(int codigo, double quantidade) {
         for (Produto prod : listaProd) {
@@ -87,6 +104,12 @@ public class ManipulaProduto implements IProdutos {
         return false;
     }
 
+    /**
+     * Subtrai uma certa quantidade ao produto
+     * @param codigo Código do produto a ser alterado.
+     * @param quantidade Quantidade a ser subtraída.
+     * @return true se conseguiu subtrair, false caso não conseguiu
+     */
     @Override
     public boolean subQuantidade(int codigo, double quantidade) {
         for (Produto prod : listaProd) {
